@@ -1,272 +1,4 @@
-<!DOCTYPE html>
-<html lang="es">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mister Gaming | Secretos Prohibidos</title>
-    
-    <meta name="description" content="Noticias virales y secretos oscuros de Fortnite y Roblox.">
-    
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700;900&family=Roboto:wght@400;700&display=swap" rel="stylesheet">
-    
-    <style>
-        :root {
-            --primary: #0a192f;
-            --secondary: #112240;
-            --accent: #39ff14;
-            --alert: #ff0055;
-            --white: #e6f1ff;
-            --gray: #8892b0;
-        }
-
-        * { margin: 0; padding: 0; box-sizing: border-box; }
-        html { scroll-behavior: smooth; }
-        
-        body {
-            font-family: 'Roboto', sans-serif;
-            background-color: var(--primary);
-            color: var(--white);
-            line-height: 1.6;
-            overflow-x: hidden;
-        }
-
-        /* --- NAVEGACIÓN --- */
-        nav {
-            background: rgba(10, 25, 47, 0.95);
-            backdrop-filter: blur(10px);
-            height: 80px;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 0 5%;
-            position: fixed;
-            width: 100%;
-            top: 0;
-            z-index: 1000;
-            border-bottom: 2px solid var(--accent);
-        }
-
-        .logo {
-            font-family: 'Montserrat', sans-serif;
-            font-weight: 900;
-            color: var(--accent);
-            font-size: 1.8rem;
-            text-transform: uppercase;
-            text-shadow: 0 0 15px rgba(57, 255, 20, 0.4);
-        }
-
-        .nav-links { display: flex; gap: 2rem; }
-        .nav-links a {
-            text-decoration: none;
-            color: var(--white);
-            font-weight: 700;
-            text-transform: uppercase;
-            transition: 0.3s;
-        }
-        .nav-links a:hover { color: var(--accent); }
-
-        /* --- HERO --- */
-        .hero {
-            height: 70vh;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            text-align: center;
-            background: linear-gradient(180deg, rgba(10,25,47,0.8) 0%, var(--primary) 100%), 
-                        url('https://images.unsplash.com/photo-1538481199705-c710c4e965fc?auto=format&fit=crop&q=80&w=2000');
-            background-size: cover;
-            background-position: center;
-            margin-top: 80px;
-            padding: 20px;
-        }
-
-        .hero h1 {
-            font-family: 'Montserrat', sans-serif;
-            font-size: clamp(2.5rem, 8vw, 5rem);
-            line-height: 1;
-            margin-bottom: 1rem;
-            color: #fff;
-            text-shadow: 0 0 20px rgba(0,0,0,0.8);
-        }
-
-        .hero p {
-            font-size: 1.2rem;
-            color: #ccc;
-            margin-bottom: 2rem;
-            max-width: 800px;
-        }
-
-        /* --- CONTENIDO --- */
-        .content-section { padding: 80px 10%; }
-        
-        .section-title {
-            font-family: 'Montserrat', sans-serif;
-            font-size: 3rem;
-            text-align: center;
-            margin-bottom: 4rem;
-            color: var(--white);
-            text-transform: uppercase;
-            letter-spacing: 2px;
-        }
-
-        .news-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-            gap: 3rem;
-        }
-
-        /* --- TARJETAS --- */
-        .news-card {
-            background: var(--secondary);
-            border-radius: 12px;
-            overflow: hidden;
-            box-shadow: 0 10px 40px rgba(0,0,0,0.5);
-            transition: transform 0.3s ease;
-            display: flex;
-            flex-direction: column;
-            border: 1px solid rgba(255,255,255,0.05);
-        }
-
-        .news-card:hover {
-            transform: translateY(-10px);
-            border-color: var(--accent);
-        }
-
-        .news-card img {
-            width: 100%;
-            height: 200px;
-            object-fit: cover;
-            filter: contrast(110%);
-        }
-
-        .news-card-content {
-            padding: 25px;
-            display: flex;
-            flex-direction: column;
-            flex-grow: 1;
-        }
-
-        .news-card h3 {
-            font-family: 'Montserrat', sans-serif;
-            color: var(--accent);
-            margin-bottom: 15px;
-            font-size: 1.3rem;
-            line-height: 1.2;
-            text-transform: uppercase;
-        }
-        
-        .news-card h3 span { color: var(--alert); }
-
-        .news-card p {
-            color: #b0b8d1;
-            font-size: 0.95rem;
-            margin-bottom: 25px;
-            flex-grow: 1;
-            border-bottom: 1px solid rgba(255,255,255,0.1);
-            padding-bottom: 20px;
-        }
-
-        .btn-container { text-align: center; }
-
-        .btn-full-note {
-            display: inline-block;
-            background-color: var(--accent);
-            color: var(--primary);
-            padding: 12px 30px;
-            border-radius: 50px;
-            font-weight: 900;
-            text-decoration: none;
-            text-transform: uppercase;
-            font-size: 0.9rem;
-            box-shadow: 0 0 15px rgba(57, 255, 20, 0.4);
-            transition: 0.3s;
-        }
-
-        .btn-full-note:hover {
-            background-color: #fff;
-            transform: scale(1.05);
-            box-shadow: 0 0 25px rgba(57, 255, 20, 0.6);
-        }
-
-        /* --- FOOTER --- */
-        footer {
-            padding: 50px;
-            text-align: center;
-            background: #020c1b;
-            color: var(--gray);
-            font-size: 0.8rem;
-        }
-
-        @media (max-width: 768px) {
-            .nav-links { display: none; }
-            .content-section { padding: 60px 5%; }
-        }
-    </style>
-</head>
-<body>
-
-    <nav>
-        <div class="logo">MISTER GAMING</div>
-        <div class="nav-links">
-            <a href="#fortnite">Fortnite</a>
-            <a href="#roblox">Roblox</a>
-            <a href="#">Contacto</a>
-        </div>
-    </nav>
-
-    <section class="hero">
-        <h1>LO QUE ELLOS NO QUIEREN QUE SEPAS</h1>
-        <p>Filtraciones, bugs y secretos que están a punto de ser eliminados.</p>
-    </section>
-
-    <section class="content-section" id="fortnite">
-        <h2 class="section-title">ESCÁNDALOS DE FORTNITE</h2>
-        <div class="news-grid">
-            <div class="news-card">
-                <img src="https://cdn.pixabay.com/photo/2019/07/09/08/27/fortnite-4326062_1280.jpg" alt="Mapa Destruido">
-                <div class="news-card-content">
-                    <h3>¡ADIÓS AL MAPA! EL EVENTO FINAL HA SIDO <span>FILTRADO</span> 😱</h3>
-                    <p>Un empleado descontento de Epic Games acaba de publicar los archivos del evento...</p>
-                    <div class="btn-container"><a href="fortnite-blog.html#noticia1" class="btn-full-note">Leer nota completa</a></div>
-                </div>
-            </div>
-            <div class="news-card">
-                <img src="https://images.hdqwalls.com/wallpapers/fortnite-x-marvel-nexus-war-5k-oa.jpg" alt="Marvel Glitch">
-                <div class="news-card-content">
-                    <h3>¡ROTO! CÓMO CONSEGUIR LA SKIN DE SPIDER-MAN <span>GRATIS</span> (SIN BUGS) 🕷️</h3>
-                    <p>Parece mentira, pero un error en la tienda de objetos permite reclamar el pack...</p>
-                    <div class="btn-container"><a href="fortnite-blog.html#noticia2" class="btn-full-note">Leer nota completa</a></div>
-                </div>
-            </div>
-            <div class="news-card">
-                <img src="https://wallpaperaccess.com/full/2081785.jpg" alt="Construcción Prohibida">
-                <div class="news-card-content">
-                    <h3>¡ESTA CONFIGURACIÓN ES <span>ILEGAL</span>! AIMBOT EN CONSOLA 🎯</h3>
-                    <p>Los jugadores profesionales están furiosos. Una nueva configuración de asistencia de apuntado...</p>
-                    <div class="btn-container"><a href="fortnite-blog.html#noticia3" class="btn-full-note">Leer nota completa</a></div>
-                </div>
-            </div>
-            <div class="news-card">
-                <img src="https://images.hdqwalls.com/wallpapers/fortnite-battle-royale-season-8-bp.jpg" alt="XP Glitch">
-                <div class="news-card-content">
-                    <h3>SUBE 50 NIVELES EN 1 MINUTO CON ESTE MAPA <span>GLITCHEADO</span> ⚡</h3>
-                    <p>El código de isla 5599... está dando 10,000 de XP por segundo simplemente por...</p>
-                    <div class="btn-container"><a href="fortnite-blog.html#noticia4" class="btn-full-note">Leer nota completa</a></div>
-                </div>
-            </div>
-            <div class="news-card">
-                <img src="https://wallpapercave.com/wp/wp2587800.png" alt="Arma Oculta">
-                <div class="news-card-content">
-                    <h3>ENCONTRARON UN ARMA MÍTICA QUE <span>ATRAVIESA PAREDES</span> 🚫</h3>
-                    <p>Nadie sabía que existía hasta hoy. Un streamer encontró la "Escopeta Fantasma"...</p>
-                    <div class="btn-container"><a href="fortnite-blog.html#noticia5" class="btn-full-note">Leer nota completa</a></div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section class="content-section" id="roblox" style="background: #020c1b;">
+<section class="content-section" id="roblox" style="background: #020c1b;">
         <h2 class="section-title">SECRETOS DE ROBLOX</h2>
         <div class="news-grid">
             
@@ -274,8 +6,10 @@
                 <img src="https://i.pinimg.com/originals/42/c7/c2/42c7c233683647020312869b16232473.jpg" alt="Blox Fruits Admin">
                 <div class="news-card-content">
                     <h3>¡ME DIERON LA FRUTA LEOPARD PERMANENTE POR <span>ERROR</span>! 🐆</h3>
-                    <p>El administrador "Rip_Indra" entró a un servidor público y soltó por accidente...</p>
-                    <div class="btn-container"><a href="roblox-blog.html#roblox1" class="btn-full-note">Leer nota completa</a></div>
+                    <p>El administrador "Rip_Indra" entró a un servidor público y soltó por accidente 5 frutas...</p>
+                    <div class="btn-container">
+                        <a href="roblox-blog.html#roblox1" class="btn-full-note">Leer nota completa</a>
+                    </div>
                 </div>
             </div>
 
@@ -283,8 +17,10 @@
                 <img src="https://static1.thegamerimages.com/wordpress/wp-content/uploads/2022/05/Roblox-Brookhaven-RP-Key-Art.jpg" alt="Brookhaven Hacker">
                 <div class="news-card-content">
                     <h3>NO ENTRES A BROOKHAVEN A LAS 3:00 AM... <span>HACKER 007</span> 👹</h3>
-                    <p>Urban legend confirmada. Si escribes "help me" en el chat de la iglesia...</p>
-                    <div class="btn-container"><a href="roblox-blog.html#roblox2" class="btn-full-note">Leer nota completa</a></div>
+                    <p>Urban legend confirmada. Si escribes "help me" en el chat de la iglesia abandonada...</p>
+                    <div class="btn-container">
+                        <a href="roblox-blog.html#roblox2" class="btn-full-note">Leer nota completa</a>
+                    </div>
                 </div>
             </div>
 
@@ -293,7 +29,9 @@
                 <div class="news-card-content">
                     <h3>NIÑO DE 12 AÑOS SE HACE <span>MILLONARIO</span> VENDIENDO ESTO 💸</h3>
                     <p>No creó ningún juego. Solo hizo una camiseta negra con un pixel blanco y ganó...</p>
-                    <div class="btn-container"><a href="roblox-blog.html#roblox3" class="btn-full-note">Leer nota completa</a></div>
+                    <div class="btn-container">
+                        <a href="roblox-blog.html#roblox3" class="btn-full-note">Leer nota completa</a>
+                    </div>
                 </div>
             </div>
 
@@ -302,7 +40,9 @@
                 <div class="news-card-content">
                     <h3>EL FINAL SECRETO DE DOORS QUE <span>NADIE HA VISTO</span> 🚪</h3>
                     <p>Si llegas a la puerta 100 sin coger ninguna moneda y sin usar el encendedor...</p>
-                    <div class="btn-container"><a href="roblox-blog.html#roblox4" class="btn-full-note">Leer nota completa</a></div>
+                    <div class="btn-container">
+                         <a href="roblox-blog.html#roblox4" class="btn-full-note">Leer nota completa</a>
+                    </div>
                 </div>
             </div>
 
@@ -311,16 +51,11 @@
                 <div class="news-card-content">
                     <h3>¡CUIDADO! ROBLOX ELIMINARÁ ESTAS CUENTAS MAÑANA ⚠️</h3>
                     <p>Una nueva política de "inactividad y nombres ofensivos" entrará en vigor en 24 horas...</p>
-                    <div class="btn-container"><a href="roblox-blog.html#roblox5" class="btn-full-note">Leer nota completa</a></div>
+                    <div class="btn-container">
+                        <a href="roblox-blog.html#roblox5" class="btn-full-note">Leer nota completa</a>
+                    </div>
                 </div>
             </div>
 
         </div>
     </section>
-
-    <footer>
-        <p>&copy; 2025 Mister Gaming. La verdad oculta de los videojuegos.</p>
-    </footer>
-
-</body>
-</html>
