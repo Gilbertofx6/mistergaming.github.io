@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mister Gaming | Términos y Políticas</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700;900&family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
+    
+    <style>
+        :root {
+            --primary: #0a192f;
+            --secondary: #112240;
+            --accent: #39ff14; /* Verde Neón */
+            --text-main: #e6f1ff;
+            --text-dim: #8892b0;
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        
+        body {
+            font-family: 'Roboto', sans-serif;
+            background-color: var(--primary);
+            color: var(--text-main);
+            line-height: 1.8;
+            scroll-behavior: smooth;
+        }
+
+        /* HEADER */
+        header {
+            background: rgba(10, 25, 47, 0.98);
+            padding: 20px 5%;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            border-bottom: 2px solid var(--accent);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 900;
+            color: var(--accent);
+            font-size: 1.5rem;
+            text-transform: uppercase;
+        }
+
+        .btn-back {
+            text-decoration: none;
+            color: var(--primary);
+            background: var(--accent);
+            padding: 8px 20px;
+            border-radius: 4px;
+            font-weight: bold;
+            font-size: 0.8rem;
+            text-transform: uppercase;
+            transition: 0.3s;
+        }
+        .btn-back:hover { background: #fff; }
+
+        /* CONTENIDO LEGAL */
+        .container {
+            max-width: 900px;
+            margin: 50px auto;
+            padding: 0 20px;
+        }
+
+        .legal-box {
+            background: var(--secondary);
+            padding: 40px;
+            border-radius: 10px;
+            margin-bottom: 40px;
+            border: 1px solid rgba(255,255,255,0.05);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+        }
+
+        h1 {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 2.5rem;
+            margin-bottom: 10px;
+            text-align: center;
+            color: #fff;
+        }
+
+        .intro-text {
+            text-align: center;
+            color: var(--text-dim);
+            margin-bottom: 50px;
+        }
+
+        h2 {
+            font-family: 'Montserrat', sans-serif;
+            color: var(--accent);
+            font-size: 1.8rem;
+            margin-bottom: 20px;
+            border-bottom: 1px solid rgba(57, 255, 20, 0.2);
+            padding-bottom: 10px;
+            margin-top: 10px;
+        }
+
+        h3 {
+            color: #fff;
+            font-size: 1.2rem;
+            margin: 25px 0 10px 0;
+        }
+
+        p, ul {
+            color: var(--text-dim);
+            font-size: 1rem;
+            margin-bottom: 15px;
+        }
+
+        ul { margin-left: 20px; }
+        li { margin-bottom: 10px; }
+
+        /* ÍNDICE DE NAVEGACIÓN RÁPIDA */
+        .quick-nav {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            margin-bottom: 40px;
+            flex-wrap: wrap;
+        }
+
+        .quick-nav a {
+            color: var(--text-main);
+            text-decoration: none;
+            border: 1px solid var(--text-dim);
+            padding: 10px 20px;
+            border-radius: 30px;
+            font-size: 0.9rem;
+            transition: 0.3s;
+        }
+
+        .quick-nav a:hover {
+            border-color: var(--accent);
+            color: var(--accent);
+            background: rgba(57, 255, 20, 0.1);
+        }
+
+        footer {
+            text-align: center;
+            padding: 40px;
+            color: var(--text-dim);
+            font-size: 0.8rem;
+            border-top: 1px solid rgba(255,255,255,0.05);
+        }
+
+        @media (max-width: 768px) {
+            h1 { font-size: 2rem; }
+            .legal-box { padding: 20px; }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="logo">Mister Gaming</div>
+        <a href="index.html" class="btn-back">Volver al Inicio</a>
+    </header>
+
+    <div class="container">
+        <h1>Centro de Políticas</h1>
+        <p class="intro-text">Transparencia total para nuestra comunidad gamer. Última actualización: 2025.</p>
+
+        <div class="quick-nav">
+            <a href="#aviso-legal">Aviso Legal</a>
+            <a href="#privacidad">Privacidad</a>
+            <a href="#cookies">Cookies</a>
+        </div>
+
+        <div class="legal-box" id="aviso-legal">
+            <h2>1. Aviso Legal y Descargo de Responsabilidad</h2>
+            <p><strong>Mister Gaming</strong> es un sitio web de noticias, entretenimiento y opinión creado por fans y para fans.</p>
+            
+            <h3>Propiedad Intelectual</h3>
+            <p>Este sitio web NO está afiliado, asociado, autorizado, respaldado ni conectado oficialmente de ninguna manera con <strong>Epic Games, Inc.</strong> (creadores de Fortnite) ni con <strong>Roblox Corporation</strong>.</p>
+            <p>Todos los nombres de juegos, marcas comerciales, logotipos e imágenes mencionados en este sitio son propiedad de sus respectivos dueños. El uso de dichas marcas se realiza bajo la política de "Uso Justo" (Fair Use) con fines informativos y de crítica.</p>
+
+            <h3>Responsabilidad del Contenido</h3>
+            <p>Los trucos, consejos y guías publicados en Mister Gaming se proporcionan "tal cual". No nos hacemos responsables si el uso de glitches o trucos resulta en la suspensión de tu cuenta de juego. El usuario asume toda la responsabilidad al aplicar estos métodos.</p>
+        </div>
+
+        <div class="legal-box" id="privacidad">
+            <h2>2. Política de Privacidad</h2>
+            <p>En Mister Gaming respetamos tu privacidad. A continuación explicamos qué datos recopilamos.</p>
+
+            <h3>¿Qué información recogemos?</h3>
+            <p>Actualmente, este sitio web es de carácter informativo y estático. No recopilamos nombres, correos electrónicos ni direcciones físicas de nuestros usuarios, ya que no contamos con formularios de registro ni bases de datos activas.</p>
+
+            <h3>Enlaces a Terceros</h3>
+            <p>Nuestro sitio puede contener enlaces a sitios web externos (como YouTube, Twitter, o sitios oficiales de juegos). No tenemos control sobre el contenido o las prácticas de privacidad de esos sitios y no asumimos responsabilidad por ellos.</p>
+        </div>
+
+        <div class="legal-box" id="cookies">
+            <h2>3. Política de Cookies</h2>
+            <p>Utilizamos cookies para mejorar la experiencia de usuario y analizar el tráfico del sitio.</p>
+
+            <h3>¿Qué son las cookies?</h3>
+            <p>Las cookies son pequeños archivos de texto que los sitios web guardan en tu ordenador o dispositivo móvil cuando los visitas.</p>
+
+            <h3>Tipos de Cookies que usamos</h3>
+            <ul>
+                <li><strong>Cookies Esenciales:</strong> Necesarias para que el sitio funcione correctamente.</li>
+                <li><strong>Cookies de Rendimiento:</strong> Nos ayudan a entender cómo interactúas con la página (por ejemplo, qué noticias son las más leídas) de forma anónima.</li>
+            </ul>
+
+            <h3>Control de Cookies</h3>
+            <p>Puedes desactivar las cookies cambiando la configuración de tu navegador. Sin embargo, ten en cuenta que algunas funciones del sitio podrían no funcionar correctamente si lo haces.</p>
+        </div>
+
+    </div>
+
+    <footer>
+        <p>&copy; 2025 Mister Gaming. Todos los derechos reservados.</p>
+        <p>Fortnite es una marca registrada de Epic Games. Roblox es una marca registrada de Roblox Corp.</p>
+    </footer>
+
+</body>
+</html>
