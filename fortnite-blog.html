@@ -10,22 +10,14 @@
         :root {
             --primary: #0a192f;
             --secondary: #112240;
-            --accent: #39ff14; /* Verde Neón */
-            --alert: #ff0055;  /* Rojo Alerta para énfasis */
+            --accent: #39ff14;
+            --alert: #ff0055;
             --white: #e6f1ff;
             --gray: #8892b0;
         }
-
         * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: 'Roboto', sans-serif; background-color: var(--primary); color: var(--gray); line-height: 1.8; scroll-behavior: smooth; }
         
-        body {
-            font-family: 'Roboto', sans-serif;
-            background-color: var(--primary);
-            color: var(--gray);
-            line-height: 1.8;
-        }
-
-        /* --- HEADER SIMPLIFICADO --- */
         header {
             background: rgba(10, 25, 47, 0.95);
             padding: 20px 5%;
@@ -33,100 +25,22 @@
             top: 0;
             z-index: 1000;
             border-bottom: 2px solid var(--accent);
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
+            display: flex; justify-content: space-between; align-items: center;
         }
-
-        .logo {
-            font-family: 'Montserrat', sans-serif;
-            font-weight: 900;
-            color: var(--accent);
-            font-size: 1.5rem;
-            text-transform: uppercase;
-        }
-
-        .btn-back {
-            text-decoration: none;
-            color: var(--primary);
-            background: var(--accent);
-            padding: 8px 20px;
-            border-radius: 4px;
-            font-weight: bold;
-            text-transform: uppercase;
-            font-size: 0.8rem;
-            transition: 0.3s;
-        }
-
+        .logo { font-family: 'Montserrat', sans-serif; font-weight: 900; color: var(--accent); font-size: 1.5rem; text-transform: uppercase; }
+        .btn-back { text-decoration: none; color: var(--primary); background: var(--accent); padding: 8px 20px; border-radius: 4px; font-weight: bold; text-transform: uppercase; font-size: 0.8rem; transition: 0.3s; }
         .btn-back:hover { background: #fff; }
 
-        /* --- CONTENEDOR PRINCIPAL --- */
-        .container {
-            max-width: 800px;
-            margin: 0 auto;
-            padding: 40px 20px;
-        }
-
-        /* --- ESTILO DE ARTÍCULO INDIVIDUAL --- */
-        article {
-            background: var(--secondary);
-            border-radius: 15px;
-            overflow: hidden;
-            margin-bottom: 60px;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.5);
-            border: 1px solid rgba(57, 255, 20, 0.1);
-        }
-
-        .article-img {
-            width: 100%;
-            height: 400px;
-            object-fit: cover;
-            filter: contrast(110%);
-        }
-
-        .article-content {
-            padding: 40px;
-        }
-
-        h2 {
-            font-family: 'Montserrat', sans-serif;
-            color: var(--white);
-            font-size: 2rem;
-            margin-bottom: 20px;
-            line-height: 1.2;
-            text-transform: uppercase;
-        }
-
+        .container { max-width: 800px; margin: 0 auto; padding: 40px 20px; }
+        article { background: var(--secondary); border-radius: 15px; overflow: hidden; margin-bottom: 60px; box-shadow: 0 10px 30px rgba(0,0,0,0.5); border: 1px solid rgba(57, 255, 20, 0.1); scroll-margin-top: 100px; }
+        .article-img { width: 100%; height: 400px; object-fit: cover; filter: contrast(110%); }
+        .article-content { padding: 40px; }
+        h2 { font-family: 'Montserrat', sans-serif; color: var(--white); font-size: 2rem; margin-bottom: 20px; line-height: 1.2; text-transform: uppercase; }
         h2 span { color: var(--alert); }
-
-        .meta-info {
-            font-size: 0.8rem;
-            color: var(--accent);
-            margin-bottom: 25px;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-            font-weight: bold;
-        }
-
+        .meta-info { font-size: 0.8rem; color: var(--accent); margin-bottom: 25px; text-transform: uppercase; letter-spacing: 1px; font-weight: bold; }
         p { margin-bottom: 20px; font-size: 1.1rem; }
-
-        /* Estilo para resaltar texto dentro de los párrafos */
         strong { color: var(--white); }
-
-        /* Separador visual entre noticias */
-        hr {
-            border: 0;
-            height: 1px;
-            background: linear-gradient(90deg, transparent, var(--accent), transparent);
-            margin: 40px 0;
-            opacity: 0.3;
-        }
-
-        @media (max-width: 768px) {
-            .article-img { height: 250px; }
-            h2 { font-size: 1.5rem; }
-            .article-content { padding: 20px; }
-        }
+        @media (max-width: 768px) { .article-img { height: 250px; } h2 { font-size: 1.5rem; } .article-content { padding: 20px; } }
     </style>
 </head>
 <body>
@@ -139,72 +53,57 @@
     <div class="container">
 
         <article id="noticia1">
-            <img src="https://cdn.pixabay.com/photo/2019/07/09/08/27/fortnite-4326062_1280.jpg" alt="Mapa Destruido" class="article-img">
+            <img src="https://i.postimg.cc/nrcWdQPB/Gemini_Generated_Image_94w7ty94w7ty94w7.png" alt="Mapa Destruido" class="article-img">
             <div class="article-content">
                 <div class="meta-info">🔥 Filtración Urgente | Hace 2 horas</div>
                 <h2>¡ADIÓS AL MAPA! EL EVENTO FINAL HA SIDO <span>FILTRADO</span> 😱</h2>
-                
-                <p>El caos se ha desatado en las oficinas de Epic Games esta mañana. Un presunto empleado descontento, bajo el alias de "InsiderZero", ha publicado en la Deep Web los archivos encriptados del próximo evento final de temporada, titulado internamente como <strong>"Protocolo Diluvio"</strong>. Según los datos extraídos del código fuente, el 90% de la isla actual quedará sumergida bajo el agua en menos de 48 horas tras la activación de un dispositivo oculto bajo la Plaza Central.</p>
-                
-                <p>Lo más alarmante no es solo la destrucción del mapa, sino la eliminación permanente de ubicaciones legendarias como Pisos Picados y Caserío Colesterol. Los archivos muestran modelos 3D de estas ciudades en ruinas y cubiertas de algas, lo que sugiere que no volveremos a verlas jamás. La comunidad está en pánico, y muchos jugadores profesionales ya están organizando despedidas masivas en el servidor antes de que los servidores entren en mantenimiento.</p>
-                
-                <p>Epic Games aún no ha emitido un comunicado oficial, pero han comenzado a banear cuentas en redes sociales que comparten las imágenes del mapa inundado. Esto prácticamente confirma la veracidad de la filtración. ¿Tienes tus skins favoritas listas? Porque el Fortnite que conoces está a punto de morir para siempre. Prepara tu escuadrón, porque la tormenta esta vez no viene del cielo, viene desde las profundidades.</p>
+                <p>El caos se ha desatado en las oficinas de Epic Games esta mañana. Un presunto empleado descontento ha publicado los archivos encriptados del próximo evento final, titulado <strong>"Protocolo Diluvio"</strong>. El 90% de la isla actual quedará sumergida bajo el agua.</p>
+                <p>Los archivos muestran modelos 3D de Pisos Picados y Caserío Colesterol en ruinas y cubiertas de algas. La comunidad está en pánico, y muchos jugadores profesionales ya están organizando despedidas masivas.</p>
+                <p>Epic Games ha comenzado a banear cuentas que comparten estas imágenes, confirmando su veracidad. ¿Tienes tus skins favoritas listas? El Fortnite que conoces está a punto de morir para siempre.</p>
             </div>
         </article>
 
         <article id="noticia2">
-            <img src="https://images.hdqwalls.com/wallpapers/fortnite-x-marvel-nexus-war-5k-oa.jpg" alt="Marvel Glitch" class="article-img">
+            <img src="https://i.postimg.cc/5y7RD2ct/Gemini_Generated_Image_rw4sfcrw4sfcrw4s.png" alt="Marvel Glitch" class="article-img">
             <div class="article-content">
                 <div class="meta-info">🕷️ Glitch de Tienda | Parcheado pronto</div>
                 <h2>¡ROTO! CÓMO CONSEGUIR LA SKIN DE SPIDER-MAN <span>GRATIS</span> (SIN BUGS) 🕷️</h2>
-                
-                <p>Parece mentira, pero está ocurriendo ahora mismo. Un error de sincronización entre la tienda de objetos y el servidor de recompensas de Epic Games está permitiendo a miles de usuarios reclamar el Pack Definitivo de Marvel por absolutamente <strong>0 Pavos</strong>. No se trata de un hack ni de una aplicación externa, sino de una secuencia específica de botones en el lobby que confunde al sistema de pagos.</p>
-                
-                <p>El método, descubierto por un usuario de Reddit, consiste en lo siguiente: Debes entrar a la tienda, seleccionar el lote de Spider-Man, pulsar rápidamente "Regalar" y cancelar la operación tres veces seguidas. Luego, al cambiar inmediatamente al menú de "Carrera", el juego interpreta que la transacción se completó pero no debita los Pavos de tu cuenta. Al volver al casillero, la skin aparece como "Adquirida".</p>
-                
-                <p>Youtubers famosos como TheGrefg y Ninja ya han insinuado este error en sus directos, pero evitan mostrarlo paso a paso para no perder sus códigos de creador. Sin embargo, los foros están ardiendo con capturas de pantalla de jugadores nivel 1 luciendo skins legendarias. Epic Games seguramente lanzará un "Hotfix" en las próximas horas para corregir esto y posiblemente retirar los cosméticos, pero muchos aseguran que si equipas la skin inmediatamente, el sistema no puede borrarlas. ¿Te arriesgarás a intentarlo?</p>
+                <p>Un error de sincronización entre la tienda de objetos y el servidor de recompensas está permitiendo reclamar el Pack Definitivo de Marvel por <strong>0 Pavos</strong>.</p>
+                <p>El método: entra a la tienda, selecciona el lote, pulsa "Regalar" y cancela la operación tres veces seguidas. Luego cambia al menú "Carrera" inmediatamente. Al volver, la skin aparece como "Adquirida".</p>
+                <p>Youtubers famosos ya han insinuado este error. Epic Games seguramente lanzará un "Hotfix" en las próximas horas. ¿Te arriesgarás a intentarlo?</p>
             </div>
         </article>
 
         <article id="noticia3">
-            <img src="https://wallpaperaccess.com/full/2081785.jpg" alt="Aimbot Config" class="article-img">
+            <img src="https://i.postimg.cc/VvLh7bV2/Gemini_Generated_Image_id7647id7647id76.png" alt="Aimbot Config" class="article-img">
             <div class="article-content">
                 <div class="meta-info">🎮 Polémica Competitiva | Tendencia</div>
                 <h2>¡ESTA CONFIGURACIÓN ES <span>ILEGAL</span>! AIMBOT EN CONSOLA 🎯</h2>
-                
-                <p>El mundo competitivo de Fortnite está en pie de guerra. Los jugadores de teclado y ratón han iniciado una petición formal para que Epic Games elimine una nueva configuración de "Asistencia de Apuntado" (Aim Assist) que, según ellos, funciona literalmente como un <strong>Aimbot legalizado</strong>. No necesitas descargar software malicioso; solo tienes que ajustar dos valores en la pestaña de "Opciones Avanzadas de Mando".</p>
-                
-                <p>La configuración "mágica" implica poner la curva de entrada de vista en "Lineal", bajar la zona muerta del stick derecho al 5% y establecer la velocidad de vista horizontal al 43%. Al hacer esto, el juego activa un "rastreo magnético" que sigue la cabeza de los oponentes incluso a través de estructuras de madera recién construidas. Las pruebas realizadas en laboratorio muestran que la mira se pega al objetivo con una fuerza un 30% superior a lo normal.</p>
-                
-                <p>Jugadores profesionales que han ganado millones en torneos están amenazando con retirarse si esto no se soluciona. "Es imposible competir contra alguien que no puede fallar balas porque el juego apunta por él", declaró un finalista de la FNCS ayer. Si juegas en consola, te recomendamos probar esta configuración antes de que sea "nerfeada" en la próxima actualización, porque ahora mismo, es la única forma de garantizar victorias contra los jugadores de PC más tryhards.</p>
+                <p>Los jugadores de teclado y ratón han iniciado una petición formal para eliminar una nueva configuración de "Asistencia de Apuntado" que funciona como un <strong>Aimbot legalizado</strong>.</p>
+                <p>La configuración implica poner la curva de entrada de vista en "Lineal", bajar la zona muerta al 5% y establecer la velocidad horizontal al 43%. Esto activa un "rastreo magnético" que sigue la cabeza de los oponentes.</p>
+                <p>Jugadores profesionales amenazan con retirarse. Si juegas en consola, prueba esta configuración antes de que sea "nerfeada".</p>
             </div>
         </article>
 
         <article id="noticia4">
-            <img src="https://images.hdqwalls.com/wallpapers/fortnite-battle-royale-season-8-bp.jpg" alt="XP Glitch" class="article-img">
+            <img src="https://i.postimg.cc/x8x4B1rk/Gemini_Generated_Image_vvvzl9vvvzl9vvvz.png" alt="XP Glitch" class="article-img">
             <div class="article-content">
                 <div class="meta-info">⚡ Farmeo de XP | Solo hoy</div>
                 <h2>SUBE 50 NIVELES EN 1 MINUTO CON ESTE MAPA <span>GLITCHEADO</span> ⚡</h2>
-                
-                <p>Si estás cansado de grindear misiones aburridas para completar tu Pase de Batalla, hoy es tu día de suerte. Un creador de mapas en el modo Creativo 2.0 ha dejado accidentalmente un "botón de depuración" activo en su mapa de Parkour, y la cantidad de experiencia que otorga está rompiendo el sistema de niveles de Fortnite. Estamos hablando de más de <strong>10,000 XP por segundo</strong> simplemente por quedarse quieto (AFK).</p>
-                
-                <p>El código de la isla es <strong>5599-8844-XXXX</strong> (El código completo está en nuestro Discord privado para evitar saturación). Una vez dentro, debes ignorar el recorrido principal e ir detrás de la bóveda de armas en el spawn. Allí encontrarás un pequeño gnomo invisible; al interactuar con él, tu pantalla comenzará a llenarse de notificaciones de subida de nivel sin parar. Algunos usuarios reportan haber llegado al nivel 200 en menos de una hora.</p>
-                
-                <p>La pregunta que todos se hacen es: ¿Es seguro? Técnicamente, no estás usando hacks, estás aprovechando un error de diseño de un mapa creativo, lo cual es una zona gris en los términos de servicio de Epic. Sin embargo, existe el riesgo de que Epic revierta la experiencia ganada (XP Rollback). Nuestra recomendación es gastar las Estrellas de Batalla inmediatamente en las skins del pase para asegurar las recompensas antes de que el mapa sea eliminado de la lista de descubrimientos.</p>
+                <p>Un creador de mapas ha dejado un "botón de depuración" activo en su mapa, otorgando más de <strong>10,000 XP por segundo</strong> por quedarse AFK.</p>
+                <p>El código es <strong>5599-8844-XXXX</strong>. Detrás de la bóveda de armas en el spawn encontrarás un gnomo invisible; interactúa con él y tu nivel se disparará.</p>
+                <p>Recomendamos gastar las Estrellas de Batalla inmediatamente para asegurar las recompensas antes de que el mapa sea eliminado.</p>
             </div>
         </article>
 
         <article id="noticia5">
-            <img src="https://wallpapercave.com/wp/wp2587800.png" alt="Arma Oculta" class="article-img">
+            <img src="https://i.postimg.cc/Y0qPXms5/Gemini_Generated_Image_d2txfsd2txfsd2tx.png" alt="Arma Oculta" class="article-img">
             <div class="article-content">
                 <div class="meta-info">🚫 Objeto Prohibido | Datamining</div>
                 <h2>ENCONTRARON UN ARMA MÍTICA QUE <span>ATRAVIESA PAREDES</span> 🚫</h2>
-                
-                <p>Nadie sabía que existía hasta hoy. Durante una partida pública normal, un streamer famoso se topó con una caja de suministros glitcheada que brillaba en un color rojo intenso, nunca antes visto. Al abrirla, encontró lo que los archivos del juego llaman la <strong>"Escopeta Fantasma"</strong> (Ghost Shotgun), un arma que fue cancelada por los desarrolladores hace 3 temporadas por ser demasiado poderosa.</p>
-                
-                <p>Esta escopeta tiene una característica única y devastadora: sus perdigones están cargados con energía de "Punto Cero", lo que les permite atravesar una capa de construcción (ya sea madera, ladrillo o metal) sin perder daño. Imagina estar curándote tranquilo en tu cubo y recibir un disparo de 200 de daño en la cabeza a través de tu propia pared. Eso es exactamente lo que hace esta bestia.</p>
-                
-                <p>No se sabe si la aparición del arma fue un error de código o si Epic Games está probándola "en secreto" en partidas reales para ver la reacción de la gente. Lo que sí sabemos es que si te encuentras con alguien que lleva esta arma, tu única opción es correr, porque esconderse ya no sirve de nada. Esto cambia el meta del "box-fighting" para siempre y podría significar el fin de la construcción defensiva tal como la conocemos.</p>
+                <p>Un streamer famoso se topó con una caja de suministros roja que contenía la <strong>"Escopeta Fantasma"</strong>, un arma cancelada por ser demasiado poderosa.</p>
+                <p>Sus perdigones cargados con energía de "Punto Cero" atraviesan cualquier construcción sin perder daño. Imagina recibir un disparo de 200 a través de tu propia pared.</p>
+                <p>Si te encuentras con alguien que lleva esta arma, corre. Esto cambia el meta del "box-fighting" para siempre.</p>
             </div>
         </article>
 
