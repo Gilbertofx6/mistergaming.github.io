@@ -3,37 +3,37 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mister Gaming | Trucos y Secretos Pro</title>
+    <title>Mister Gaming | Fortnite & Roblox Pro</title>
     
-    <meta name="description" content="La mejor comunidad de trucos para Fortnite, Roblox, Free Fire y más.">
-    <meta property="og:title" content="Mister Gaming - Domina el Juego">
-    <meta property="og:description" content="Aprende secretos y estrategias de tus juegos favoritos.">
-    <meta property="og:type" content="website">
-
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700;900&family=Roboto:wght@300;400&display=swap" rel="stylesheet">
+    <meta name="description" content="Mister Gaming: Noticias, trucos y secretos de Fortnite y Roblox.">
+    
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700;900&family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
     
     <style>
         :root {
-            --primary: #0a192f;
-            --secondary: #112240;
-            --accent: #39ff14; /* Verde Neón */
-            --white: #e6f1ff;
-            --gray: #8892b0;
+            --primary: #0a192f;       /* Azul Marino Profundo */
+            --secondary: #112240;     /* Azul Marino Claro */
+            --accent: #39ff14;        /* Verde Neón */
+            --white: #e6f1ff;         /* Blanco Hielo */
+            --gray: #8892b0;          /* Gris Azulado */
+            --transition: all 0.3s cubic-bezier(0.645, 0.045, 0.355, 1);
         }
 
+        /* --- RESET & BASE --- */
         * { margin: 0; padding: 0; box-sizing: border-box; }
         html { scroll-behavior: smooth; }
-
+        
         body {
             font-family: 'Roboto', sans-serif;
             background-color: var(--primary);
             color: var(--white);
             line-height: 1.6;
+            overflow-x: hidden;
         }
 
         /* --- NAVEGACIÓN --- */
         nav {
-            background: rgba(10, 25, 47, 0.9);
+            background: rgba(10, 25, 47, 0.95);
             backdrop-filter: blur(10px);
             height: 80px;
             display: flex;
@@ -44,278 +44,374 @@
             width: 100%;
             top: 0;
             z-index: 1000;
-            border-bottom: 1px solid rgba(57, 255, 20, 0.2);
+            border-bottom: 1px solid rgba(57, 255, 20, 0.15);
+            box-shadow: 0 10px 30px -10px rgba(2, 12, 27, 0.7);
         }
 
         .logo {
             font-family: 'Montserrat', sans-serif;
             font-weight: 900;
             color: var(--accent);
-            font-size: 1.5rem;
+            font-size: 1.8rem;
             text-transform: uppercase;
+            letter-spacing: -1px;
+            text-shadow: 0 0 10px rgba(57, 255, 20, 0.3);
         }
 
-        .nav-links { display: flex; gap: 1.5rem; }
+        .nav-links { display: flex; gap: 2rem; }
+        
         .nav-links a {
             text-decoration: none;
             color: var(--white);
             font-weight: 700;
-            font-size: 0.85rem;
-            transition: 0.3s;
+            font-size: 0.9rem;
             text-transform: uppercase;
+            letter-spacing: 1px;
+            transition: var(--transition);
         }
-        .nav-links a:hover { color: var(--accent); }
 
-        /* --- HERO --- */
+        .nav-links a:hover { color: var(--accent); text-shadow: 0 0 8px var(--accent); }
+
+        /* --- HERO SECTION --- */
         .hero {
-            height: 100vh;
+            height: 80vh;
             display: flex;
             flex-direction: column;
             justify-content: center;
             align-items: center;
             text-align: center;
-            background: radial-gradient(circle, rgba(17,34,64,1) 0%, rgba(10,25,47,1) 100%);
+            background: linear-gradient(135deg, rgba(10,25,47,0.9) 0%, rgba(17,34,64,0.8) 100%), 
+                        url('https://images.unsplash.com/photo-1538481199705-c710c4e965fc?auto=format&fit=crop&q=80&w=2000');
+            background-size: cover;
+            background-position: center;
             padding: 0 20px;
+            margin-top: 80px;
         }
 
         .hero h1 {
             font-family: 'Montserrat', sans-serif;
-            font-size: clamp(2.5rem, 10vw, 5rem);
+            font-size: clamp(3rem, 8vw, 5rem);
             margin-bottom: 1rem;
             color: #fff;
+            text-shadow: 3px 3px 0px var(--primary), 0 0 20px rgba(57, 255, 20, 0.5);
         }
 
         .hero p {
-            font-size: 1.2rem;
+            font-size: 1.3rem;
             color: var(--gray);
-            margin-bottom: 2rem;
+            margin-bottom: 2.5rem;
             max-width: 700px;
         }
 
         .cta-button {
-            background: var(--accent);
-            color: var(--primary);
-            padding: 1rem 2.5rem;
+            background: transparent;
+            color: var(--accent);
+            padding: 1rem 3rem;
+            border: 2px solid var(--accent);
             border-radius: 4px;
             font-weight: 900;
             text-decoration: none;
-            transition: 0.3s;
-            box-shadow: 0 0 20px rgba(57, 255, 20, 0.2);
+            transition: var(--transition);
+            font-family: 'Montserrat', sans-serif;
+            letter-spacing: 2px;
+            box-shadow: 0 0 15px rgba(57, 255, 20, 0.1);
         }
 
         .cta-button:hover {
-            transform: scale(1.05);
+            background: rgba(57, 255, 20, 0.1);
+            transform: translateY(-5px);
             box-shadow: 0 0 30px rgba(57, 255, 20, 0.4);
         }
 
-        /* --- SECCIONES DE CONTENIDO GENERAL --- */
+        /* --- GENERAL SECTIONS STYLE --- */
         .content-section {
-            padding: 80px 10%;
-            background-color: var(--primary); /* Asegura el fondo oscuro para contraste */
+            padding: 100px 10%;
         }
-        
+
         .section-title {
             font-family: 'Montserrat', sans-serif;
             font-size: clamp(2rem, 5vw, 3rem);
             text-align: center;
-            margin-bottom: 3rem;
+            margin-bottom: 4rem;
             color: var(--white);
             position: relative;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 20px;
         }
 
-        .section-title::after {
+        .section-title::before, .section-title::after {
             content: '';
             display: block;
-            width: 60px;
-            height: 4px;
+            width: 100px;
+            height: 2px;
             background: var(--accent);
-            margin: 15px auto 0;
-            border-radius: 2px;
+            opacity: 0.5;
         }
 
-        /* --- GRID DE SERVICIOS (EXISTENTE) --- */
-        .grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 2rem;
-        }
-
-        .card {
-            background: var(--secondary);
-            padding: 2.5rem;
-            border-radius: 10px;
-            border: 1px solid rgba(255,255,255,0.05);
-            transition: 0.3s;
-        }
-
-        .card:hover {
-            border-color: var(--accent);
-            transform: translateY(-5px);
-        }
-
-        .card h3 { color: var(--accent); margin-bottom: 1rem; font-family: 'Montserrat'; }
-
-        /* --- NOTICIAS FORTNITE ESPECÍFICAS --- */
+        /* --- NEWS GRIDS --- */
         .news-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
             gap: 2.5rem;
-            margin-top: 3rem;
         }
 
         .news-card {
             background: var(--secondary);
-            border-radius: 12px;
+            border-radius: 10px;
             overflow: hidden;
-            box-shadow: 0 8px 25px rgba(0,0,0,0.4);
-            transition: 0.3s ease-in-out;
-            border: 1px solid rgba(255,255,255,0.08);
+            box-shadow: 0 10px 30px -15px rgba(2,12,27,0.7);
+            transition: var(--transition);
+            cursor: pointer;
+            border: 1px solid transparent;
+            position: relative;
+            top: 0;
         }
 
         .news-card:hover {
-            transform: translateY(-8px);
-            box-shadow: 0 15px 40px rgba(0,0,0,0.6);
+            transform: translateY(-10px);
             border-color: var(--accent);
         }
 
         .news-card img {
             width: 100%;
-            height: 200px;
+            height: 220px;
             object-fit: cover;
-            display: block;
+            filter: grayscale(20%) contrast(110%);
+            transition: var(--transition);
+        }
+
+        .news-card:hover img {
+            filter: grayscale(0%) contrast(120%);
         }
 
         .news-card-content {
             padding: 25px;
         }
 
-        .news-card h4 {
+        .news-card h3 {
             font-family: 'Montserrat', sans-serif;
-            font-size: 1.4rem;
             color: var(--white);
             margin-bottom: 15px;
-            line-height: 1.3;
+            font-size: 1.4rem;
         }
 
         .news-card p {
             color: var(--gray);
             font-size: 0.95rem;
-            line-height: 1.7;
             margin-bottom: 20px;
         }
 
-        .read-more {
+        .btn-read-more {
             color: var(--accent);
-            font-weight: 700;
+            font-weight: 900;
+            font-size: 0.8rem;
             text-transform: uppercase;
-            font-size: 0.85rem;
+            letter-spacing: 1px;
+            display: inline-flex;
+            align-items: center;
+            gap: 5px;
         }
 
-        .read-more:hover {
-            text-decoration: underline;
+        /* --- MODAL SYSTEM --- */
+        .modal {
+            display: none; 
+            position: fixed; 
+            z-index: 2000; 
+            left: 0; top: 0; width: 100%; height: 100%; 
+            background-color: rgba(10, 25, 47, 0.98); 
+            overflow-y: auto;
+            animation: fadeIn 0.3s;
         }
+
+        .modal-content {
+            background-color: var(--secondary);
+            margin: 5% auto;
+            padding: 40px;
+            border: 1px solid var(--accent);
+            width: 90%;
+            max-width: 900px;
+            border-radius: 10px;
+            box-shadow: 0 0 50px rgba(57, 255, 20, 0.1);
+            position: relative;
+            animation: slideUp 0.4s;
+        }
+
+        .close-modal {
+            position: absolute;
+            top: 20px; right: 30px;
+            color: var(--accent);
+            font-size: 40px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: 0.2s;
+        }
+        .close-modal:hover { transform: rotate(90deg); color: #fff; }
+
+        .modal-header img {
+            width: 100%;
+            height: 300px;
+            object-fit: cover;
+            border-radius: 5px;
+            margin-bottom: 30px;
+            border-bottom: 3px solid var(--accent);
+        }
+
+        .modal-text h2 {
+            font-family: 'Montserrat';
+            font-size: 2.5rem;
+            color: var(--accent);
+            margin-bottom: 20px;
+        }
+
+        .modal-text p {
+            margin-bottom: 20px;
+            font-size: 1.1rem;
+            color: #d1d5db;
+        }
+
+        /* --- ANIMACIONES --- */
+        @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
+        @keyframes slideUp { from { transform: translateY(50px); opacity: 0; } to { transform: translateY(0); opacity: 1; } }
 
         /* --- FOOTER --- */
         footer {
-            padding: 40px;
+            padding: 50px;
             text-align: center;
-            background: #060e1a;
+            background: #020c1b;
             color: var(--gray);
             font-size: 0.9rem;
             border-top: 1px solid rgba(255,255,255,0.05);
         }
 
-        /* Responsive */
+        /* --- RESPONSIVE --- */
         @media (max-width: 768px) {
-            .nav-links { display: none; } /* En móvil el menú se oculta por simplicidad */
-            .content-section { padding: 60px 5%; }
-            .news-grid { grid-template-columns: 1fr; }
+            .nav-links { display: none; }
+            .hero h1 { font-size: 2.5rem; }
+            .content-section { padding: 80px 5%; }
+            .modal-content { width: 95%; margin: 10% auto; padding: 20px; }
+            .modal-header img { height: 200px; }
+            .modal-text h2 { font-size: 1.8rem; }
         }
     </style>
 </head>
 <body>
 
     <nav>
-        <div class="logo">Mister Gaming</div>
+        <div class="logo">MISTER GAMING</div>
         <div class="nav-links">
             <a href="#inicio">Inicio</a>
-            <a href="#fortnite-news">Fortnite</a>
-            <a href="#">Roblox</a>
-            <a href="#">Minecraft</a>
-            <a href="#">Políticas</a>
+            <a href="#fortnite">Fortnite</a>
+            <a href="#roblox">Roblox</a>
+            <a href="#contacto">Comunidad</a>
         </div>
     </nav>
 
     <section class="hero" id="inicio">
         <h1>DOMINA EL JUEGO</h1>
-        <p>Aprende las estrategias que usan los profesionales para ganar cada partida.</p>
-        <a href="#trucos" class="cta-button">MÁS TRUCOS</a>
+        <p>Tu cuartel general para trucos, noticias y secretos de Fortnite y Roblox.</p>
+        <a href="#fortnite" class="cta-button">VER NOTICIAS</a>
     </section>
 
-    <section class="content-section" id="trucos">
-        <h2 class="section-title">Nuestra Actividad</h2>
-        <div class="grid">
-            <div class="card">
-                <h3>Noticias</h3>
-                <p>Nuevas actualizaciones de la temporada y filtraciones exclusivas.</p>
+    <section class="content-section" id="fortnite">
+        <h2 class="section-title">FORTNITE NEWS</h2>
+        <div class="news-grid">
+            
+            <div class="news-card" onclick="openModal('fortnite1')">
+                <img src="https://images.unsplash.com/photo-1542751371-adc38448a05e?auto=format&fit=crop&q=80&w=800" alt="Temporada Orígenes">
+                <div class="news-card-content">
+                    <h3>Temporada Orígenes</h3>
+                    <p>El mapa clásico del Capítulo 1 regresa rompiendo todos los récords.</p>
+                    <span class="btn-read-more">LEER ANÁLISIS +</span>
+                </div>
             </div>
-            <div class="card">
-                <h3>Secretos</h3>
-                <p>Lugares ocultos en el mapa y bugs beneficiosos descubiertos.</p>
+
+            <div class="news-card" onclick="openModal('fortnite2')">
+                <img src="https://images.unsplash.com/photo-1614680376573-df3480f0c6ff?auto=format&fit=crop&q=80&w=800" alt="Marvel Event">
+                <div class="news-card-content">
+                    <h3>Colaboración Marvel</h3>
+                    <p>Wolverine y Spider-Man llegan para cambiar el meta competitivo.</p>
+                    <span class="btn-read-more">VER FILTRACIONES +</span>
+                </div>
             </div>
-            <div class="card">
-                <h3>Estrategias</h3>
-                <p>Guías paso a paso para mejorar tu puntería y construcción.</p>
+
+            <div class="news-card" onclick="openModal('fortnite3')">
+                <img src="https://images.unsplash.com/photo-1589241062272-c0a000072dfa?auto=format&fit=crop&q=80&w=800" alt="Guia Construccion">
+                <div class="news-card-content">
+                    <h3>Guía de Construcción</h3>
+                    <p>Mejora tus 90s y ediciones con estos ajustes de sensibilidad.</p>
+                    <span class="btn-read-more">VER GUÍA +</span>
+                </div>
             </div>
+
+            <div class="news-card" onclick="openModal('fortnite4')">
+                <img src="https://images.unsplash.com/photo-1599317573060-e74f114a514d?auto=format&fit=crop&q=80&w=800" alt="Desafíos">
+                <div class="news-card-content">
+                    <h3>XP Rápida y Skins</h3>
+                    <p>Completa el Pase de Batalla en tiempo récord con estos glitches de XP.</p>
+                    <span class="btn-read-more">SUBIR NIVEL +</span>
+                </div>
+            </div>
+
+            <div class="news-card" onclick="openModal('fortnite5')">
+                <img src="https://images.unsplash.com/photo-1579373903781-fd5c0c30c4cd?auto=format&fit=crop&q=80&w=800" alt="Meta Armas">
+                <div class="news-card-content">
+                    <h3>Las Armas META</h3>
+                    <p>Ranking de las mejores escopetas y fusiles de la temporada actual.</p>
+                    <span class="btn-read-more">VER TIER LIST +</span>
+                </div>
+            </div>
+
         </div>
     </section>
 
-    <section class="content-section" id="fortnite-news">
-        <h2 class="section-title">Noticias de Fortnite</h2>
+    <section class="content-section" id="roblox" style="background: #020c1b;">
+        <h2 class="section-title">UNIVERSO ROBLOX</h2>
         <div class="news-grid">
             
-            <div class="news-card">
-                <img src="https://via.placeholder.com/600x400/0a192f/39ff14?text=Fortnite+Noticia+1" alt="Imagen de Noticia 1">
+            <div class="news-card" onclick="openModal('roblox1')">
+                <img src="https://images.unsplash.com/photo-1552820728-8b83bb6b773f?auto=format&fit=crop&q=80&w=800" alt="Blox Fruits">
                 <div class="news-card-content">
-                    <h4>Nueva Temporada: Los Orígenes de la Batalla</h4>
-                    <p>Epic Games lanza la Temporada X con un mapa renovado, armas míticas y un pase de batalla que te dejará sin aliento.</p>
-                    <a href="#" class="read-more">Leer Más</a>
+                    <h3>Blox Fruits: Dragon</h3>
+                    <p>La Rework de la Fruta Dragón ya está aquí y es devastadora.</p>
+                    <span class="btn-read-more">VER CAMBIOS +</span>
                 </div>
             </div>
 
-            <div class="news-card">
-                <img src="https://via.placeholder.com/600x400/0a192f/39ff14?text=Fortnite+Noticia+2" alt="Imagen de Noticia 2">
+            <div class="news-card" onclick="openModal('roblox2')">
+                <img src="https://images.unsplash.com/photo-1555680202-c86f0e12f086?auto=format&fit=crop&q=80&w=800" alt="Brookhaven">
                 <div class="news-card-content">
-                    <h4>Filtración: Evento Colaborativo con Marvel</h4>
-                    <p>Se rumorea que Wolverine y Spider-Man podrían llegar a la isla en un evento épico por tiempo limitado. ¡Prepara tus V-Bucks!</p>
-                    <a href="#" class="read-more">Leer Más</a>
+                    <h3>Secretos Brookhaven</h3>
+                    <p>Encontramos el búnker secreto de la Agencia. Ubicación exacta.</p>
+                    <span class="btn-read-more">VER MAPA +</span>
                 </div>
             </div>
 
-            <div class="news-card">
-                <img src="https://via.placeholder.com/600x400/0a192f/39ff14?text=Fortnite+Noticia+3" alt="Imagen de Noticia 3">
+            <div class="news-card" onclick="openModal('roblox3')">
+                <img src="https://images.unsplash.com/photo-1611162617474-5b21e879e113?auto=format&fit=crop&q=80&w=800" alt="Economía">
                 <div class="news-card-content">
-                    <h4>Guía Pro: Construcción Rápida y Defensiva</h4>
-                    <p>Descubre los 5 trucos esenciales para dominar la construcción en Fortnite y ganar ventaja en cada enfrentamiento.</p>
-                    <a href="#" class="read-more">Leer Más</a>
+                    <h3>Guía de Robux</h3>
+                    <p>Cómo crear ropa y accesorios UGC para ganar Robux legalmente.</p>
+                    <span class="btn-read-more">APRENDER +</span>
                 </div>
             </div>
 
-            <div class="news-card">
-                <img src="https://via.placeholder.com/600x400/0a192f/39ff14?text=Fortnite+Noticia+4" alt="Imagen de Noticia 4">
+            <div class="news-card" onclick="openModal('roblox4')">
+                <img src="https://images.unsplash.com/photo-1509248961158-e54f6934749c?auto=format&fit=crop&q=80&w=800" alt="Doors">
                 <div class="news-card-content">
-                    <h4>Desafíos Semanales: Recompensas Épicas</h4>
-                    <p>Completa todos los desafíos de esta semana para desbloquear skins exclusivas y una buena cantidad de experiencia.</p>
-                    <a href="#" class="read-more">Leer Más</a>
+                    <h3>DOORS: Piso 2</h3>
+                    <p>Sobrevive a las Minas y a las nuevas entidades oscuras.</p>
+                    <span class="btn-read-more">GUÍA TERROR +</span>
                 </div>
             </div>
 
-            <div class="news-card">
-                <img src="https://via.placeholder.com/600x400/0a192f/39ff14?text=Fortnite+Noticia+5" alt="Imagen de Noticia 5">
+            <div class="news-card" onclick="openModal('roblox5')">
+                <img src="https://images.unsplash.com/photo-1542831371-29b0f74f9713?auto=format&fit=crop&q=80&w=800" alt="Studio">
                 <div class="news-card-content">
-                    <h4>Meta Actual: Las Mejores Armas de la Temporada</h4>
-                    <p>Analizamos el daño, la cadencia y la utilidad de las armas más poderosas que dominan el meta actual de Fortnite.</p>
-                    <a href="#" class="read-more">Leer Más</a>
+                    <h3>Crear Juegos con IA</h3>
+                    <p>Roblox Studio añade herramientas para crear mapas en segundos.</p>
+                    <span class="btn-read-more">TUTORIAL +</span>
                 </div>
             </div>
 
@@ -323,8 +419,167 @@
     </section>
 
     <footer>
-        <p>&copy; 2025 Mister Gaming. Todos los derechos reservados.</p>
+        <p>&copy; 2025 Mister Gaming. Hecho para Gamers.</p>
     </footer>
+
+
+    <div id="fortnite1" class="modal">
+        <div class="modal-content">
+            <span class="close-modal" onclick="closeModal('fortnite1')">&times;</span>
+            <div class="modal-header"><img src="https://images.unsplash.com/photo-1542751371-adc38448a05e?auto=format&fit=crop&q=80&w=800"></div>
+            <div class="modal-text">
+                <h2>El Renacer: Temporada Orígenes</h2>
+                <p>La espera ha terminado y la nostalgia ha invadido los servidores de Epic Games. Con el lanzamiento de la nueva temporada "Orígenes", Fortnite ha logrado lo impensable: reunir a más de 44 millones de jugadores en un solo día. Pero, ¿qué es lo que hace que esta actualización sea tan especial?</p>
+                <p>No es solo el regreso del mapa original del Capítulo 1, sino la optimización de las mecánicas clásicas combinadas con los gráficos de última generación del motor Unreal Engine 5. Los jugadores podrán redescubrir lugares emblemáticos como Pisos Picados y Caserío Colesterol, pero con una fluidez nunca antes vista. Además, se han introducido armas míticas que equilibran el combate, obligando a los veteranos a replantear sus estrategias.</p>
+                <p>Mister Gaming ha analizado los datos y el meta actual sugiere que las escopetas de corredera vuelven a ser las reinas del campo de batalla. Si quieres subir de rango rápidamente en esta temporada, te recomendamos enfocarte en las zonas de aterrizaje de alto riesgo pero alta recompensa. ¡La competencia es feroz y solo los más rápidos sobrevivirán!</p>
+            </div>
+        </div>
+    </div>
+
+    <div id="fortnite2" class="modal">
+        <div class="modal-content">
+            <span class="close-modal" onclick="closeModal('fortnite2')">&times;</span>
+            <div class="modal-header"><img src="https://images.unsplash.com/photo-1614680376573-df3480f0c6ff?auto=format&fit=crop&q=80&w=800"></div>
+            <div class="modal-text">
+                <h2>Héroes de Marvel: El Multiverso Colapsa</h2>
+                <p>La alianza entre Epic Games y Marvel Studios alcanza un nuevo nivel de intensidad. En esta última actualización, el multiverso se abre paso en la isla, trayendo no solo nuevas skins, sino habilidades de combate que han transformado el modo competitivo para siempre.</p>
+                <p>Personajes como Wolverine y Iron Man no solo están presentes como cosméticos, sino que sus poderes están esparcidos por el mapa como objetos de botín único. El "Rayo de Stark" permite atravesar estructuras de metal, lo que ha generado un debate intenso en la comunidad sobre si estos objetos están demasiado potentes ("OP").</p>
+                <p>Para los coleccionistas, el Pase de Batalla incluye variantes "Gold" y "Holográficas" que solo se pueden desbloquear superando el nivel 200. Desde Mister Gaming te traemos el consejo definitivo: aprovecha los túneles de viento cercanos a la base de los Vengadores para rotaciones rápidas y ataques sorpresa. ¡Es hora de elegir un bando!</p>
+            </div>
+        </div>
+    </div>
+
+    <div id="fortnite3" class="modal">
+        <div class="modal-content">
+            <span class="close-modal" onclick="closeModal('fortnite3')">&times;</span>
+            <div class="modal-header"><img src="https://images.unsplash.com/photo-1589241062272-c0a000072dfa?auto=format&fit=crop&q=80&w=800"></div>
+            <div class="modal-text">
+                <h2>Domina la Construcción: Guía Avanzada</h2>
+                <p>La diferencia entre un jugador casual y un profesional en Fortnite no está solo en la puntería, sino en la velocidad de edición y construcción. En esta guía de Mister Gaming, desglosamos la técnica del "Box Fighting" que usan los pros en torneos FNCS.</p>
+                <p>Primero, hablemos de sensibilidad. Muchos jugadores cometen el error de tener una sensibilidad demasiado alta, lo que arruina su precisión de escopeta. Recomendamos bajar el DPI a 800 y ajustar la sensibilidad del juego entre 6% y 8%. Esto te permitirá movimientos de brazo más amplios y controlados para construir tus "90s" sin marearte.</p>
+                <p>El truco secreto de esta temporada es la "Pieza de Control" (Piece Control). No se trata solo de construir tu cubo, sino de anticipar dónde se moverá el enemigo y colocar una pared antes que él. Practica en mapas creativos dedicados al Piece Control al menos 15 minutos antes de entrar a Ranked. ¡Verás cómo tus victorias aumentan drásticamente!</p>
+            </div>
+        </div>
+    </div>
+
+    <div id="fortnite4" class="modal">
+        <div class="modal-content">
+            <span class="close-modal" onclick="closeModal('fortnite4')">&times;</span>
+            <div class="modal-header"><img src="https://images.unsplash.com/photo-1599317573060-e74f114a514d?auto=format&fit=crop&q=80&w=800"></div>
+            <div class="modal-text">
+                <h2>Ruta de XP y Secretos del Pase</h2>
+                <p>¿Quieres llegar al nivel 100 antes que tus amigos? El sistema de experiencia de esta temporada tiene varios trucos ocultos que no están explicados en el menú principal. Las misiones diarias son obvias, pero los hitos ocultos otorgan hasta 50,000 XP extra.</p>
+                <p>Hemos descubierto una ruta de "loot" al norte del mapa donde hay una concentración inusualmente alta de cofres y cajas de munición. Abrir todo en esta zona, sin siquiera pelear, te puede garantizar medio nivel por partida. Además, el modo "Salvar el Mundo" sigue siendo la fuente más rota de XP si tienes acceso a él.</p>
+                <p>Cuidado con los mapas de "XP Glitch" en Creativo; Epic Games está baneando a quienes abusan de errores del sistema. En Mister Gaming solo recomendamos métodos 100% legales y seguros. Enfócate en las misiones de historia semanales, ya que no solo dan experiencia, sino que desbloquean estilos alternativos para las skins del pase que no podrás conseguir después.</p>
+            </div>
+        </div>
+    </div>
+
+    <div id="fortnite5" class="modal">
+        <div class="modal-content">
+            <span class="close-modal" onclick="closeModal('fortnite5')">&times;</span>
+            <div class="modal-header"><img src="https://images.unsplash.com/photo-1579373903781-fd5c0c30c4cd?auto=format&fit=crop&q=80&w=800"></div>
+            <div class="modal-text">
+                <h2>Tier List: Las Armas del Meta Actual</h2>
+                <p>Cada actualización cambia el equilibrio del juego, y esta semana no es la excepción. Hemos probado todas las armas en rangos Unreal y tenemos el veredicto definitivo sobre qué llevar en tu inventario para asegurar la Victoria Magistral.</p>
+                <p>En la categoría de escopetas, la Escopeta de Corredera (Pump) sigue siendo la reina indiscutible para el daño explosivo, pero no subestimes la Escopeta Automática si tienes mala puntería; su cadencia de fuego perdona más errores. En cuanto a fusiles, el Fusil de Asalto de Ojo Rojo ha sido "nerfeado", por lo que recomendamos cambiar al Subfusil de Doble Cargador para combates a media distancia.</p>
+                <p>El objeto mítico de la temporada es sin duda el Guantelete de Movilidad. Aunque no hace daño, la capacidad de reposicionarte en las zonas finales (endgame) es vital. Recuerda: en Fortnite, la altura gana partidas. Prioriza siempre llevar 2 espacios de curación, 1 de movilidad y 2 armas. ¡Ese es el equipamiento de un campeón!</p>
+            </div>
+        </div>
+    </div>
+
+    <div id="roblox1" class="modal">
+        <div class="modal-content">
+            <span class="close-modal" onclick="closeModal('roblox1')">&times;</span>
+            <div class="modal-header"><img src="https://images.unsplash.com/photo-1552820728-8b83bb6b773f?auto=format&fit=crop&q=80&w=800"></div>
+            <div class="modal-text">
+                <h2>Blox Fruits: La Rework de la Fruta Dragón</h2>
+                <p>¡Atención piratas y marines! El mar de Blox Fruits está más agitado que nunca. Después de meses de especulación, la actualización de la Fruta Dragón (Dragon Rework) está a punto de cambiar el meta del PVP de forma definitiva. Ya no se trata solo de spamear ataques; la nueva mecánica de "Furia Dracónica" requiere una gestión precisa de la energía.</p>
+                <p>Según los filtradores, la transformación visual es espectacular, ocupando casi el doble de pantalla y añadiendo efectos de partículas increíbles. Pero lo más importante son los combos: ahora la Dragón tiene un "stun" (aturdimiento) que puede encadenarse con el estilo de pelea Godhuman.</p>
+                <p>En Mister Gaming hemos probado el servidor de pruebas y te damos un consejo crucial: empieza a farmear fragmentos ahora mismo. El coste para despertar esta fruta se rumorea que superará los 20,000 fragmentos. Además, se ha añadido una nueva isla oculta en el Tercer Mar donde podrás conseguir el accesorio "Escama Ancestral". ¡A zarpar!</p>
+            </div>
+        </div>
+    </div>
+
+    <div id="roblox2" class="modal">
+        <div class="modal-content">
+            <span class="close-modal" onclick="closeModal('roblox2')">&times;</span>
+            <div class="modal-header"><img src="https://images.unsplash.com/photo-1555680202-c86f0e12f086?auto=format&fit=crop&q=80&w=800"></div>
+            <div class="modal-text">
+                <h2>Brookhaven RP: La Conspiración de la Agencia</h2>
+                <p>Brookhaven es famoso por ser un juego de rol tranquilo, pero bajo la superficie se esconde una historia oscura. La última actualización silenciosa ha añadido nuevas habitaciones secretas que conectan la historia de "La Agencia" con el misterioso "Mr. Brookhaven".</p>
+                <p>Si vas al hospital abandonado y entras por la ventilación del techo usando una escalera, encontrarás una tarjeta de acceso azul. Si llevas esa tarjeta a la tienda de electricidad y haces clic en la caja de fusibles trasera, se abrirá un panel secreto que lleva a un búnker subterráneo.</p>
+                <p>Este tipo de "Lore" oculto está atrayendo a investigadores. En Mister Gaming hemos verificado que si te sientas en la silla del búnker a las 3:00 AM (hora del juego), aparecerá un mensaje en código morse. ¿Estás listo para dejar de jugar a las casitas y empezar a investigar la verdad?</p>
+            </div>
+        </div>
+    </div>
+
+    <div id="roblox3" class="modal">
+        <div class="modal-content">
+            <span class="close-modal" onclick="closeModal('roblox3')">&times;</span>
+            <div class="modal-header"><img src="https://images.unsplash.com/photo-1611162617474-5b21e879e113?auto=format&fit=crop&q=80&w=800"></div>
+            <div class="modal-text">
+                <h2>Economía en Roblox: Generar Robux Realistas</h2>
+                <p>Seamos honestos: los generadores de Robux son estafas. Sin embargo, existe una economía real dentro de Roblox. Hoy en Mister Gaming te enseñamos la estrategia legítima de "Ropa y UGC" (Contenido Generado por Usuario).</p>
+                <p>La clave es crear "Assets". Con una inversión mínima de 10 Robux, puedes subir diseños de camisetas. La tendencia actual en 2025 es la moda "Y2K" y "Cyberpunk". Si aprendes a usar herramientas gratuitas como GIMP o Canva para crear texturas, puedes vender tus diseños.</p>
+                <p>El truco profesional: No vendas solo ropa, vende "Pases de Juego" para juegos gratuitos que crees (como un "Speed Coil" o una alfombra voladora en un juego de obstáculos simple). ¡Cuida tu cuenta y haz crecer tu cartera!</p>
+            </div>
+        </div>
+    </div>
+
+    <div id="roblox4" class="modal">
+        <div class="modal-content">
+            <span class="close-modal" onclick="closeModal('roblox4')">&times;</span>
+            <div class="modal-header"><img src="https://images.unsplash.com/photo-1509248961158-e54f6934749c?auto=format&fit=crop&q=80&w=800"></div>
+            <div class="modal-text">
+                <h2>DOORS Piso 2: Guía de Supervivencia</h2>
+                <p>El juego de terror ha vuelto con su actualización más brutal: "The Mines". Si pensabas que Figure era un problema, espera a conocer a las nuevas entidades del subsuelo. La atmósfera sonora es vital, usa auriculares.</p>
+                <p>Una de las nuevas amenazas es "Giggle", una entidad que se cuelga del techo y te aturde. La mecánica de luz también ha cambiado; ahora necesitas gestionar el combustible de tu lámpara, ya que la oscuridad total te matará mucho más rápido debido a "Grumble".</p>
+                <p>Consejo de Mister Gaming: En la sala de los generadores, no corras. El sonido atrae a las entidades ciegas mucho más rápido debido a la acústica de la cueva. Memoriza el mapa y trabaja en equipo. ¿Podrás llegar a la puerta 200?</p>
+            </div>
+        </div>
+    </div>
+
+    <div id="roblox5" class="modal">
+        <div class="modal-content">
+            <span class="close-modal" onclick="closeModal('roblox5')">&times;</span>
+            <div class="modal-header"><img src="https://images.unsplash.com/photo-1542831371-29b0f74f9713?auto=format&fit=crop&q=80&w=800"></div>
+            <div class="modal-text">
+                <h2>Roblox Studio e Inteligencia Artificial</h2>
+                <p>Roblox quiere ser el motor de creación más accesible del mundo. La nueva actualización de Studio ha integrado herramientas de IA Generativa que permiten crear sin saber programar en Lua.</p>
+                <p>Ahora puedes escribir en un chat lateral cosas como "Generar un bosque lluvioso con niebla roja" y el motor lo creará automáticamente. También se ha implementado un asistente de código que ayuda a escribir scripts complejos para NPCs.</p>
+                <p>Esto abre una oportunidad de oro. Si tienes una idea para un juego de terror o un "Obby", nunca ha sido tan fácil. En Mister Gaming creemos que el próximo gran éxito podría ser tuyo. ¡Descarga Studio y empieza a construir hoy!</p>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Función para abrir modal
+        function openModal(modalId) {
+            const modal = document.getElementById(modalId);
+            if (modal) {
+                modal.style.display = "block";
+                document.body.style.overflow = "hidden"; // Evita que se haga scroll en la pagina de fondo
+            }
+        }
+
+        // Función para cerrar modal
+        function closeModal(modalId) {
+            const modal = document.getElementById(modalId);
+            if (modal) {
+                modal.style.display = "none";
+                document.body.style.overflow = "auto"; // Reactiva el scroll
+            }
+        }
+
+        // Cerrar si se hace click fuera del contenido del modal
+        window.onclick = function(event) {
+            if (event.target.classList.contains('modal')) {
+                event.target.style.display = "none";
+                document.body.style.overflow = "auto";
+            }
+        }
+    </script>
 
 </body>
 </html>
