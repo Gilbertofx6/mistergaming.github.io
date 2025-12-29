@@ -197,6 +197,14 @@
             font-size: 0.8rem;
         }
 
+        .footer-links a {
+            color: var(--gray);
+            text-decoration: none;
+            margin: 0 10px;
+            transition: 0.3s;
+        }
+        .footer-links a:hover { color: var(--accent); }
+
         @media (max-width: 768px) {
             .nav-links { display: none; }
             .content-section { padding: 60px 5%; }
@@ -210,7 +218,7 @@
         <div class="nav-links">
             <a href="#fortnite">Fortnite</a>
             <a href="#roblox">Roblox</a>
-            <a href="#">Contacto</a>
+            <a href="politicas.html">Políticas</a>
         </div>
     </nav>
 
@@ -325,6 +333,11 @@
 
     <footer>
         <p>&copy; 2025 Mister Gaming. La verdad oculta de los videojuegos.</p>
+        <div class="footer-links">
+            <a href="politicas.html">Aviso Legal</a> | 
+            <a href="politicas.html">Privacidad</a> | 
+            <a href="politicas.html">Cookies</a>
+        </div>
     </footer>
 
 </body>
