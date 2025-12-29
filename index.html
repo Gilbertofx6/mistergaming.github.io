@@ -3,23 +3,22 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mister Gaming | Fortnite & Roblox Pro</title>
+    <title>Mister Gaming | Secretos Prohibidos</title>
     
-    <meta name="description" content="Mister Gaming: Noticias, trucos y secretos de Fortnite y Roblox.">
+    <meta name="description" content="Noticias virales y secretos oscuros de Fortnite y Roblox.">
     
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700;900&family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700;900&family=Roboto:wght@400;700&display=swap" rel="stylesheet">
     
     <style>
         :root {
-            --primary: #0a192f;       /* Azul Marino Profundo */
-            --secondary: #112240;     /* Azul Marino Claro */
-            --accent: #39ff14;        /* Verde Neón */
-            --white: #e6f1ff;         /* Blanco Hielo */
-            --gray: #8892b0;          /* Gris Azulado */
-            --transition: all 0.3s cubic-bezier(0.645, 0.045, 0.355, 1);
+            --primary: #0a192f;
+            --secondary: #112240;
+            --accent: #39ff14;
+            --alert: #ff0055; /* Color para títulos clickbait */
+            --white: #e6f1ff;
+            --gray: #8892b0;
         }
 
-        /* --- RESET & BASE --- */
         * { margin: 0; padding: 0; box-sizing: border-box; }
         html { scroll-behavior: smooth; }
         
@@ -44,8 +43,7 @@
             width: 100%;
             top: 0;
             z-index: 1000;
-            border-bottom: 1px solid rgba(57, 255, 20, 0.15);
-            box-shadow: 0 10px 30px -10px rgba(2, 12, 27, 0.7);
+            border-bottom: 2px solid var(--accent);
         }
 
         .logo {
@@ -54,120 +52,80 @@
             color: var(--accent);
             font-size: 1.8rem;
             text-transform: uppercase;
-            letter-spacing: -1px;
-            text-shadow: 0 0 10px rgba(57, 255, 20, 0.3);
+            text-shadow: 0 0 15px rgba(57, 255, 20, 0.4);
         }
 
         .nav-links { display: flex; gap: 2rem; }
-        
         .nav-links a {
             text-decoration: none;
             color: var(--white);
             font-weight: 700;
-            font-size: 0.9rem;
             text-transform: uppercase;
-            letter-spacing: 1px;
-            transition: var(--transition);
+            transition: 0.3s;
         }
+        .nav-links a:hover { color: var(--accent); }
 
-        .nav-links a:hover { color: var(--accent); text-shadow: 0 0 8px var(--accent); }
-
-        /* --- HERO SECTION (IMAGEN ORIGINAL MANTENIDA) --- */
+        /* --- HERO --- */
         .hero {
-            height: 80vh;
+            height: 70vh;
             display: flex;
             flex-direction: column;
             justify-content: center;
             align-items: center;
             text-align: center;
-            /* IMAGEN DEL SETUP GAMER MANTENIDA */
-            background: linear-gradient(135deg, rgba(10,25,47,0.9) 0%, rgba(17,34,64,0.8) 100%), 
+            background: linear-gradient(180deg, rgba(10,25,47,0.8) 0%, var(--primary) 100%), 
                         url('https://images.unsplash.com/photo-1538481199705-c710c4e965fc?auto=format&fit=crop&q=80&w=2000');
             background-size: cover;
             background-position: center;
-            padding: 0 20px;
             margin-top: 80px;
+            padding: 20px;
         }
 
         .hero h1 {
             font-family: 'Montserrat', sans-serif;
-            font-size: clamp(3rem, 8vw, 5rem);
+            font-size: clamp(2.5rem, 8vw, 5rem);
+            line-height: 1;
             margin-bottom: 1rem;
             color: #fff;
-            text-shadow: 3px 3px 0px var(--primary), 0 0 20px rgba(57, 255, 20, 0.5);
+            text-shadow: 0 0 20px rgba(0,0,0,0.8);
         }
 
         .hero p {
-            font-size: 1.3rem;
-            color: var(--gray);
-            margin-bottom: 2.5rem;
-            max-width: 700px;
+            font-size: 1.2rem;
+            color: #ccc;
+            margin-bottom: 2rem;
+            max-width: 800px;
         }
 
-        .cta-button {
-            background: transparent;
-            color: var(--accent);
-            padding: 1rem 3rem;
-            border: 2px solid var(--accent);
-            border-radius: 4px;
-            font-weight: 900;
-            text-decoration: none;
-            transition: var(--transition);
-            font-family: 'Montserrat', sans-serif;
-            letter-spacing: 2px;
-            box-shadow: 0 0 15px rgba(57, 255, 20, 0.1);
-        }
-
-        .cta-button:hover {
-            background: rgba(57, 255, 20, 0.1);
-            transform: translateY(-5px);
-            box-shadow: 0 0 30px rgba(57, 255, 20, 0.4);
-        }
-
-        /* --- GENERAL SECTIONS STYLE --- */
-        .content-section {
-            padding: 100px 10%;
-        }
-
+        /* --- CONTENIDO --- */
+        .content-section { padding: 80px 10%; }
+        
         .section-title {
             font-family: 'Montserrat', sans-serif;
-            font-size: clamp(2rem, 5vw, 3rem);
+            font-size: 3rem;
             text-align: center;
             margin-bottom: 4rem;
             color: var(--white);
-            position: relative;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            gap: 20px;
+            text-transform: uppercase;
+            letter-spacing: 2px;
         }
 
-        .section-title::before, .section-title::after {
-            content: '';
-            display: block;
-            width: 100px;
-            height: 2px;
-            background: var(--accent);
-            opacity: 0.5;
-        }
-
-        /* --- NEWS GRIDS --- */
         .news-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 2.5rem;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 3rem;
         }
 
+        /* --- TARJETAS CLICKBAIT --- */
         .news-card {
             background: var(--secondary);
-            border-radius: 10px;
+            border-radius: 12px;
             overflow: hidden;
-            box-shadow: 0 10px 30px -15px rgba(2,12,27,0.7);
-            transition: var(--transition);
-            cursor: pointer;
-            border: 1px solid transparent;
-            position: relative;
-            top: 0;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.5);
+            transition: transform 0.3s ease;
+            display: flex;
+            flex-direction: column;
+            border: 1px solid rgba(255,255,255,0.05);
         }
 
         .news-card:hover {
@@ -177,106 +135,64 @@
 
         .news-card img {
             width: 100%;
-            height: 220px;
+            height: 200px;
             object-fit: cover;
-            /* Eliminamos el filtro de escala de grises para que se vean los colores vibrantes de los juegos */
-            filter: contrast(110%); 
-            transition: var(--transition);
-        }
-
-        .news-card:hover img {
-            filter: contrast(125%);
+            filter: contrast(110%);
         }
 
         .news-card-content {
             padding: 25px;
+            display: flex;
+            flex-direction: column;
+            flex-grow: 1;
         }
 
+        /* Títulos "Engañosos" y Llamativos */
         .news-card h3 {
             font-family: 'Montserrat', sans-serif;
-            color: var(--white);
+            color: var(--accent);
             margin-bottom: 15px;
-            font-size: 1.4rem;
+            font-size: 1.3rem;
+            line-height: 1.2;
+            text-transform: uppercase;
         }
+        
+        /* Estilo especial para palabras clave en títulos */
+        .news-card h3 span { color: var(--alert); }
 
         .news-card p {
-            color: var(--gray);
+            color: #b0b8d1;
             font-size: 0.95rem;
-            margin-bottom: 20px;
+            margin-bottom: 25px;
+            flex-grow: 1;
+            border-bottom: 1px solid rgba(255,255,255,0.1);
+            padding-bottom: 20px;
         }
 
-        .btn-read-more {
-            color: var(--accent);
+        /* --- BOTÓN CENTRADO --- */
+        .btn-container {
+            text-align: center;
+        }
+
+        .btn-full-note {
+            display: inline-block;
+            background-color: var(--accent);
+            color: var(--primary);
+            padding: 12px 30px;
+            border-radius: 50px;
             font-weight: 900;
-            font-size: 0.8rem;
+            text-decoration: none;
             text-transform: uppercase;
-            letter-spacing: 1px;
-            display: inline-flex;
-            align-items: center;
-            gap: 5px;
+            font-size: 0.9rem;
+            box-shadow: 0 0 15px rgba(57, 255, 20, 0.4);
+            transition: 0.3s;
         }
 
-        /* --- MODAL SYSTEM --- */
-        .modal {
-            display: none; 
-            position: fixed; 
-            z-index: 2000; 
-            left: 0; top: 0; width: 100%; height: 100%; 
-            background-color: rgba(10, 25, 47, 0.98); 
-            overflow-y: auto;
-            animation: fadeIn 0.3s;
+        .btn-full-note:hover {
+            background-color: #fff;
+            transform: scale(1.05);
+            box-shadow: 0 0 25px rgba(57, 255, 20, 0.6);
         }
-
-        .modal-content {
-            background-color: var(--secondary);
-            margin: 5% auto;
-            padding: 40px;
-            border: 1px solid var(--accent);
-            width: 90%;
-            max-width: 900px;
-            border-radius: 10px;
-            box-shadow: 0 0 50px rgba(57, 255, 20, 0.1);
-            position: relative;
-            animation: slideUp 0.4s;
-        }
-
-        .close-modal {
-            position: absolute;
-            top: 20px; right: 30px;
-            color: var(--accent);
-            font-size: 40px;
-            font-weight: bold;
-            cursor: pointer;
-            transition: 0.2s;
-        }
-        .close-modal:hover { transform: rotate(90deg); color: #fff; }
-
-        .modal-header img {
-            width: 100%;
-            height: 350px; /* Hice la imagen del modal un poco más alta para impactar */
-            object-fit: cover;
-            object-position: center;
-            border-radius: 5px;
-            margin-bottom: 30px;
-            border-bottom: 3px solid var(--accent);
-        }
-
-        .modal-text h2 {
-            font-family: 'Montserrat';
-            font-size: 2.5rem;
-            color: var(--accent);
-            margin-bottom: 20px;
-        }
-
-        .modal-text p {
-            margin-bottom: 20px;
-            font-size: 1.1rem;
-            color: #d1d5db;
-        }
-
-        /* --- ANIMACIONES --- */
-        @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
-        @keyframes slideUp { from { transform: translateY(50px); opacity: 0; } to { transform: translateY(0); opacity: 1; } }
 
         /* --- FOOTER --- */
         footer {
@@ -284,18 +200,12 @@
             text-align: center;
             background: #020c1b;
             color: var(--gray);
-            font-size: 0.9rem;
-            border-top: 1px solid rgba(255,255,255,0.05);
+            font-size: 0.8rem;
         }
 
-        /* --- RESPONSIVE --- */
         @media (max-width: 768px) {
             .nav-links { display: none; }
-            .hero h1 { font-size: 2.5rem; }
-            .content-section { padding: 80px 5%; }
-            .modal-content { width: 95%; margin: 10% auto; padding: 20px; }
-            .modal-header img { height: 200px; }
-            .modal-text h2 { font-size: 1.8rem; }
+            .content-section { padding: 60px 5%; }
         }
     </style>
 </head>
@@ -304,65 +214,73 @@
     <nav>
         <div class="logo">MISTER GAMING</div>
         <div class="nav-links">
-            <a href="#inicio">Inicio</a>
             <a href="#fortnite">Fortnite</a>
             <a href="#roblox">Roblox</a>
-            <a href="#contacto">Comunidad</a>
+            <a href="#">Contacto</a>
         </div>
     </nav>
 
-    <section class="hero" id="inicio">
-        <h1>DOMINA EL JUEGO</h1>
-        <p>Tu cuartel general para trucos, noticias y secretos de Fortnite y Roblox.</p>
-        <a href="#fortnite" class="cta-button">VER NOTICIAS</a>
+    <section class="hero">
+        <h1>LO QUE ELLOS NO QUIEREN QUE SEPAS</h1>
+        <p>Filtraciones, bugs y secretos que están a punto de ser eliminados.</p>
     </section>
 
     <section class="content-section" id="fortnite">
-        <h2 class="section-title">FORTNITE NEWS</h2>
+        <h2 class="section-title">ESCÁNDALOS DE FORTNITE</h2>
         <div class="news-grid">
             
-            <div class="news-card" onclick="openModal('fortnite1')">
-                <img src="https://cdn.pixabay.com/photo/2019/07/09/08/27/fortnite-4326062_1280.jpg" alt="Temporada Orígenes Fortnite">
+            <div class="news-card">
+                <img src="https://cdn.pixabay.com/photo/2019/07/09/08/27/fortnite-4326062_1280.jpg" alt="Mapa Destruido">
                 <div class="news-card-content">
-                    <h3>Temporada Orígenes</h3>
-                    <p>El mapa clásico del Capítulo 1 regresa rompiendo todos los récords.</p>
-                    <span class="btn-read-more">LEER ANÁLISIS +</span>
+                    <h3>¡ADIÓS AL MAPA! EL EVENTO FINAL HA SIDO <span>FILTRADO</span> 😱</h3>
+                    <p>Un empleado descontento de Epic Games acaba de publicar los archivos del evento "Big Bang 2.0". Según los datos, el 90% de la isla actual quedará bajo el agua en menos de 48 horas. ¿Tienes tus skins favoritas listas? Porque no volverás a ver Pisos Picados nunca más...</p>
+                    <div class="btn-container">
+                        <a href="https://www.fortnite.com" target="_blank" class="btn-full-note">Leer nota completa</a>
+                    </div>
                 </div>
             </div>
 
-            <div class="news-card" onclick="openModal('fortnite2')">
-                <img src="https://images.hdqwalls.com/wallpapers/fortnite-x-marvel-nexus-war-5k-oa.jpg" alt="Marvel Event Fortnite">
+            <div class="news-card">
+                <img src="https://images.hdqwalls.com/wallpapers/fortnite-x-marvel-nexus-war-5k-oa.jpg" alt="Marvel Glitch">
                 <div class="news-card-content">
-                    <h3>Colaboración Marvel</h3>
-                    <p>Wolverine y Spider-Man llegan para cambiar el meta competitivo.</p>
-                    <span class="btn-read-more">VER FILTRACIONES +</span>
+                    <h3>¡ROTO! CÓMO CONSEGUIR LA SKIN DE SPIDER-MAN <span>GRATIS</span> (SIN BUGS) 🕷️</h3>
+                    <p>Parece mentira, pero un error en la tienda de objetos permite reclamar el pack de Marvel por 0 Pavos si sigues una secuencia específica de botones en el lobby. Youtubers famosos ya lo están haciendo, pero Epic podría parchearlo en cualquier momento. Corre antes de que sea tarde.</p>
+                    <div class="btn-container">
+                        <a href="https://www.fortnite.com" target="_blank" class="btn-full-note">Leer nota completa</a>
+                    </div>
                 </div>
             </div>
 
-            <div class="news-card" onclick="openModal('fortnite3')">
-                <img src="https://wallpaperaccess.com/full/2081785.jpg" alt="Guia Construccion Fortnite">
+            <div class="news-card">
+                <img src="https://wallpaperaccess.com/full/2081785.jpg" alt="Construcción Prohibida">
                 <div class="news-card-content">
-                    <h3>Guía de Construcción</h3>
-                    <p>Mejora tus 90s y ediciones con estos ajustes de sensibilidad.</p>
-                    <span class="btn-read-more">VER GUÍA +</span>
+                    <h3>¡ESTA CONFIGURACIÓN ES <span>ILEGAL</span>! AIMBOT EN CONSOLA 🎯</h3>
+                    <p>Los jugadores profesionales están furiosos. Una nueva configuración de asistencia de apuntado (Aim Assist) convierte a cualquier novato en un dios del headshot. No necesitas hacks, solo cambiar dos valores en los ajustes avanzados. Te mostramos la captura de pantalla exacta.</p>
+                    <div class="btn-container">
+                        <a href="https://www.fortnite.com" target="_blank" class="btn-full-note">Leer nota completa</a>
+                    </div>
                 </div>
             </div>
 
-            <div class="news-card" onclick="openModal('fortnite4')">
-                <img src="https://images.hdqwalls.com/wallpapers/fortnite-battle-royale-season-8-bp.jpg" alt="Pase de Batalla XP">
+            <div class="news-card">
+                <img src="https://images.hdqwalls.com/wallpapers/fortnite-battle-royale-season-8-bp.jpg" alt="XP Glitch">
                 <div class="news-card-content">
-                    <h3>XP Rápida y Skins</h3>
-                    <p>Completa el Pase de Batalla en tiempo récord con estos glitches de XP.</p>
-                    <span class="btn-read-more">SUBIR NIVEL +</span>
+                    <h3>SUBE 50 NIVELES EN 1 MINUTO CON ESTE MAPA <span>GLITCHEADO</span> ⚡</h3>
+                    <p>El código de isla 5599... está dando 10,000 de XP por segundo simplemente por quedarse AFK (ausente). No sabemos cuánto tiempo durará activo antes de que lo borren. Entra, pulsa el botón secreto detrás de la bóveda y mira cómo tu nivel se dispara al infinito.</p>
+                    <div class="btn-container">
+                        <a href="https://www.fortnite.com" target="_blank" class="btn-full-note">Leer nota completa</a>
+                    </div>
                 </div>
             </div>
 
-            <div class="news-card" onclick="openModal('fortnite5')">
-                <img src="https://wallpapercave.com/wp/wp2587800.png" alt="Meta Armas Fortnite">
+            <div class="news-card">
+                <img src="https://wallpapercave.com/wp/wp2587800.png" alt="Arma Oculta">
                 <div class="news-card-content">
-                    <h3>Las Armas META</h3>
-                    <p>Ranking de las mejores escopetas y fusiles de la temporada actual.</p>
-                    <span class="btn-read-more">VER TIER LIST +</span>
+                    <h3>ENCONTRARON UN ARMA MÍTICA QUE <span>ATRAVIESA PAREDES</span> 🚫</h3>
+                    <p>Nadie sabía que existía hasta hoy. Un streamer encontró la "Escopeta Fantasma" en los archivos del juego y logró activarla en partida pública. Hace 200 de daño y no importa si el enemigo está encerrado en metal. Esto va a romper el competitivo para siempre.</p>
+                    <div class="btn-container">
+                        <a href="https://www.fortnite.com" target="_blank" class="btn-full-note">Leer nota completa</a>
+                    </div>
                 </div>
             </div>
 
@@ -370,51 +288,61 @@
     </section>
 
     <section class="content-section" id="roblox" style="background: #020c1b;">
-        <h2 class="section-title">UNIVERSO ROBLOX</h2>
+        <h2 class="section-title">SECRETOS DE ROBLOX</h2>
         <div class="news-grid">
             
-            <div class="news-card" onclick="openModal('roblox1')">
-                <img src="https://i.pinimg.com/originals/42/c7/c2/42c7c233683647020312869b16232473.jpg" alt="Blox Fruits Roblox">
+            <div class="news-card">
+                <img src="https://i.pinimg.com/originals/42/c7/c2/42c7c233683647020312869b16232473.jpg" alt="Blox Fruits Admin">
                 <div class="news-card-content">
-                    <h3>Blox Fruits: Dragon</h3>
-                    <p>La Rework de la Fruta Dragón ya está aquí y es devastadora.</p>
-                    <span class="btn-read-more">VER CAMBIOS +</span>
+                    <h3>¡ME DIERON LA FRUTA LEOPARD PERMANENTE POR <span>ERROR</span>! 🐆</h3>
+                    <p>El administrador "Rip_Indra" entró a un servidor público y soltó por accidente 5 frutas Leopard permanentes. Un jugador logró grabar el momento exacto y el código que usó el admin para generarlas. ¿Es posible replicar este comando siendo un usuario normal?</p>
+                    <div class="btn-container">
+                        <a href="https://www.roblox.com" target="_blank" class="btn-full-note">Leer nota completa</a>
+                    </div>
                 </div>
             </div>
 
-            <div class="news-card" onclick="openModal('roblox2')">
-                <img src="https://static1.thegamerimages.com/wordpress/wp-content/uploads/2022/05/Roblox-Brookhaven-RP-Key-Art.jpg" alt="Brookhaven Roblox">
+            <div class="news-card">
+                <img src="https://static1.thegamerimages.com/wordpress/wp-content/uploads/2022/05/Roblox-Brookhaven-RP-Key-Art.jpg" alt="Brookhaven Hacker">
                 <div class="news-card-content">
-                    <h3>Secretos Brookhaven</h3>
-                    <p>Encontramos el búnker secreto de la Agencia. Ubicación exacta.</p>
-                    <span class="btn-read-more">VER MAPA +</span>
+                    <h3>NO ENTRES A BROOKHAVEN A LAS 3:00 AM... <span>HACKER 007</span> 👹</h3>
+                    <p>Urban legend confirmada. Si escribes "help me" en el chat de la iglesia abandonada a las 3:33 AM, tu avatar empieza a glitcharse y aparece una figura negra llamada "Guest 666". Muchos dicen que perdieron su cuenta después de ver esto. Tenemos el video.</p>
+                    <div class="btn-container">
+                        <a href="https://www.roblox.com" target="_blank" class="btn-full-note">Leer nota completa</a>
+                    </div>
                 </div>
             </div>
 
-            <div class="news-card" onclick="openModal('roblox3')">
-                <img src="https://blog.roblox.com/wp-content/uploads/2022/08/Roblox_UGC_Header_v2.jpg" alt="Economía Robux">
+            <div class="news-card">
+                <img src="https://blog.roblox.com/wp-content/uploads/2022/08/Roblox_UGC_Header_v2.jpg" alt="Robux Millonario">
                 <div class="news-card-content">
-                    <h3>Guía de Robux</h3>
-                    <p>Cómo crear ropa y accesorios UGC para ganar Robux legalmente.</p>
-                    <span class="btn-read-more">APRENDER +</span>
+                    <h3>NIÑO DE 12 AÑOS SE HACE <span>MILLONARIO</span> VENDIENDO ESTO 💸</h3>
+                    <p>No creó ningún juego. Solo hizo una camiseta negra con un pixel blanco y ganó 50 millones de Robux en una semana. ¿Lavado de dinero o genialidad? Revelamos la técnica exacta que usó para burlar el algoritmo de recomendaciones de la tienda.</p>
+                    <div class="btn-container">
+                        <a href="https://www.roblox.com" target="_blank" class="btn-full-note">Leer nota completa</a>
+                    </div>
                 </div>
             </div>
 
-            <div class="news-card" onclick="openModal('roblox4')">
-                <img src="https://wallpapers.com/images/hd/robux-doors-scary-game-8v70702314996819.jpg" alt="Doors Roblox Horror">
+            <div class="news-card">
+                <img src="https://wallpapers.com/images/hd/robux-doors-scary-game-8v70702314996819.jpg" alt="Doors Final">
                 <div class="news-card-content">
-                    <h3>DOORS: Piso 2</h3>
-                    <p>Sobrevive a las Minas y a las nuevas entidades oscuras.</p>
-                    <span class="btn-read-more">GUÍA TERROR +</span>
+                    <h3>EL FINAL SECRETO DE DOORS QUE <span>NADIE HA VISTO</span> 🚪</h3>
+                    <p>Si llegas a la puerta 100 sin coger ninguna moneda y sin usar el encendedor, se abre un camino alternativo hacia "El Vacío". Lo que hay ahí abajo no son monstruos, son archivos de los desarrolladores pidiendo ayuda. ¿Es esto parte del juego o algo real?</p>
+                    <div class="btn-container">
+                        <a href="https://www.roblox.com" target="_blank" class="btn-full-note">Leer nota completa</a>
+                    </div>
                 </div>
             </div>
 
-            <div class="news-card" onclick="openModal('roblox5')">
-                <img src="https://miro.medium.com/v2/resize:fit:1400/1*FwK2aA7y5D65754490.png" alt="Roblox Studio">
+            <div class="news-card">
+                <img src="https://miro.medium.com/v2/resize:fit:1400/1*FwK2aA7y5D65754490.png" alt="Roblox Ban">
                 <div class="news-card-content">
-                    <h3>Crear Juegos con IA</h3>
-                    <p>Roblox Studio añade herramientas para crear mapas en segundos.</p>
-                    <span class="btn-read-more">TUTORIAL +</span>
+                    <h3>¡CUIDADO! ROBLOX ELIMINARÁ ESTAS CUENTAS MAÑANA ⚠️</h3>
+                    <p>Una nueva política de "inactividad y nombres ofensivos" entrará en vigor en 24 horas. Si tu nombre de usuario contiene alguna de estas 5 palabras prohibidas o no has entrado en 3 meses, perderás todo. Revisa la lista oficial aquí antes de llorar.</p>
+                    <div class="btn-container">
+                        <a href="https://www.roblox.com" target="_blank" class="btn-full-note">Leer nota completa</a>
+                    </div>
                 </div>
             </div>
 
@@ -422,164 +350,8 @@
     </section>
 
     <footer>
-        <p>&copy; 2025 Mister Gaming. Hecho para Gamers.</p>
+        <p>&copy; 2025 Mister Gaming. La verdad oculta de los videojuegos.</p>
     </footer>
-
-
-    <div id="fortnite1" class="modal">
-        <div class="modal-content">
-            <span class="close-modal" onclick="closeModal('fortnite1')">&times;</span>
-            <div class="modal-header"><img src="https://cdn.pixabay.com/photo/2019/07/09/08/27/fortnite-4326062_1280.jpg" alt="Fortnite Mapa Clasico"></div>
-            <div class="modal-text">
-                <h2>El Renacer: Temporada Orígenes</h2>
-                <p>La espera ha terminado y la nostalgia ha invadido los servidores de Epic Games. Con el lanzamiento de la nueva temporada "Orígenes", Fortnite ha logrado lo impensable: reunir a más de 44 millones de jugadores en un solo día. Pero, ¿qué es lo que hace que esta actualización sea tan especial?</p>
-                <p>No es solo el regreso del mapa original del Capítulo 1, sino la optimización de las mecánicas clásicas combinadas con los gráficos de última generación del motor Unreal Engine 5. Los jugadores podrán redescubrir lugares emblemáticos como Pisos Picados y Caserío Colesterol, pero con una fluidez nunca antes vista. Además, se han introducido armas míticas que equilibran el combate, obligando a los veteranos a replantear sus estrategias.</p>
-                <p>Mister Gaming ha analizado los datos y el meta actual sugiere que las escopetas de corredera vuelven a ser las reinas del campo de batalla. Si quieres subir de rango rápidamente en esta temporada, te recomendamos enfocarte en las zonas de aterrizaje de alto riesgo pero alta recompensa. ¡La competencia es feroz y solo los más rápidos sobrevivirán!</p>
-            </div>
-        </div>
-    </div>
-
-    <div id="fortnite2" class="modal">
-        <div class="modal-content">
-            <span class="close-modal" onclick="closeModal('fortnite2')">&times;</span>
-             <div class="modal-header"><img src="https://images.hdqwalls.com/wallpapers/fortnite-x-marvel-nexus-war-5k-oa.jpg" alt="Fortnite Marvel"></div>
-            <div class="modal-text">
-                <h2>Héroes de Marvel: El Multiverso Colapsa</h2>
-                <p>La alianza entre Epic Games y Marvel Studios alcanza un nuevo nivel de intensidad. En esta última actualización, el multiverso se abre paso en la isla, trayendo no solo nuevas skins, sino habilidades de combate que han transformado el modo competitivo para siempre.</p>
-                <p>Personajes como Wolverine y Iron Man no solo están presentes como cosméticos, sino que sus poderes están esparcidos por el mapa como objetos de botín único. El "Rayo de Stark" permite atravesar estructuras de metal, lo que ha generado un debate intenso en la comunidad sobre si estos objetos están demasiado potentes ("OP").</p>
-                <p>Para los coleccionistas, el Pase de Batalla incluye variantes "Gold" y "Holográficas" que solo se pueden desbloquear superando el nivel 200. Desde Mister Gaming te traemos el consejo definitivo: aprovecha los túneles de viento cercanos a la base de los Vengadores para rotaciones rápidas y ataques sorpresa. ¡Es hora de elegir un bando!</p>
-            </div>
-        </div>
-    </div>
-
-    <div id="fortnite3" class="modal">
-        <div class="modal-content">
-            <span class="close-modal" onclick="closeModal('fortnite3')">&times;</span>
-             <div class="modal-header"><img src="https://wallpaperaccess.com/full/2081785.jpg" alt="Fortnite Construccion"></div>
-            <div class="modal-text">
-                <h2>Domina la Construcción: Guía Avanzada</h2>
-                <p>La diferencia entre un jugador casual y un profesional en Fortnite no está solo en la puntería, sino en la velocidad de edición y construcción. En esta guía de Mister Gaming, desglosamos la técnica del "Box Fighting" que usan los pros en torneos FNCS.</p>
-                <p>Primero, hablemos de sensibilidad. Muchos jugadores cometen el error de tener una sensibilidad demasiado alta, lo que arruina su precisión de escopeta. Recomendamos bajar el DPI a 800 y ajustar la sensibilidad del juego entre 6% y 8%. Esto te permitirá movimientos de brazo más amplios y controlados para construir tus "90s" sin marearte.</p>
-                <p>El truco secreto de esta temporada es la "Pieza de Control" (Piece Control). No se trata solo de construir tu cubo, sino de anticipar dónde se moverá el enemigo y colocar una pared antes que él. Practica en mapas creativos dedicados al Piece Control al menos 15 minutos antes de entrar a Ranked. ¡Verás cómo tus victorias aumentan drásticamente!</p>
-            </div>
-        </div>
-    </div>
-
-    <div id="fortnite4" class="modal">
-        <div class="modal-content">
-            <span class="close-modal" onclick="closeModal('fortnite4')">&times;</span>
-             <div class="modal-header"><img src="https://images.hdqwalls.com/wallpapers/fortnite-battle-royale-season-8-bp.jpg" alt="Fortnite Pase de Batalla"></div>
-            <div class="modal-text">
-                <h2>Ruta de XP y Secretos del Pase</h2>
-                <p>¿Quieres llegar al nivel 100 antes que tus amigos? El sistema de experiencia de esta temporada tiene varios trucos ocultos que no están explicados en el menú principal. Las misiones diarias son obvias, pero los hitos ocultos otorgan hasta 50,000 XP extra.</p>
-                <p>Hemos descubierto una ruta de "loot" al norte del mapa donde hay una concentración inusualmente alta de cofres y cajas de munición. Abrir todo en esta zona, sin siquiera pelear, te puede garantizar medio nivel por partida. Además, el modo "Salvar el Mundo" sigue siendo la fuente más rota de XP si tienes acceso a él.</p>
-                <p>Cuidado con los mapas de "XP Glitch" en Creativo; Epic Games está baneando a quienes abusan de errores del sistema. En Mister Gaming solo recomendamos métodos 100% legales y seguros. Enfócate en las misiones de historia semanales, ya que no solo dan experiencia, sino que desbloquean estilos alternativos para las skins del pase que no podrás conseguir después.</p>
-            </div>
-        </div>
-    </div>
-
-    <div id="fortnite5" class="modal">
-        <div class="modal-content">
-            <span class="close-modal" onclick="closeModal('fortnite5')">&times;</span>
-             <div class="modal-header"><img src="https://wallpapercave.com/wp/wp2587800.png" alt="Fortnite Armas"></div>
-            <div class="modal-text">
-                <h2>Tier List: Las Armas del Meta Actual</h2>
-                <p>Cada actualización cambia el equilibrio del juego, y esta semana no es la excepción. Hemos probado todas las armas en rangos Unreal y tenemos el veredicto definitivo sobre qué llevar en tu inventario para asegurar la Victoria Magistral.</p>
-                <p>En la categoría de escopetas, la Escopeta de Corredera (Pump) sigue siendo la reina indiscutible para el daño explosivo, pero no subestimes la Escopeta Automática si tienes mala puntería; su cadencia de fuego perdona más errores. En cuanto a fusiles, el Fusil de Asalto de Ojo Rojo ha sido "nerfeado", por lo que recomendamos cambiar al Subfusil de Doble Cargador para combates a media distancia.</p>
-                <p>El objeto mítico de la temporada es sin duda el Guantelete de Movilidad. Aunque no hace daño, la capacidad de reposicionarte en las zonas finales (endgame) es vital. Recuerda: en Fortnite, la altura gana partidas. Prioriza siempre llevar 2 espacios de curación, 1 de movilidad y 2 armas. ¡Ese es el equipamiento de un campeón!</p>
-            </div>
-        </div>
-    </div>
-
-    <div id="roblox1" class="modal">
-        <div class="modal-content">
-            <span class="close-modal" onclick="closeModal('roblox1')">&times;</span>
-             <div class="modal-header"><img src="https://i.pinimg.com/originals/42/c7/c2/42c7c233683647020312869b16232473.jpg" alt="Blox Fruits Anime"></div>
-            <div class="modal-text">
-                <h2>Blox Fruits: La Rework de la Fruta Dragón</h2>
-                <p>¡Atención piratas y marines! El mar de Blox Fruits está más agitado que nunca. Después de meses de especulación, la actualización de la Fruta Dragón (Dragon Rework) está a punto de cambiar el meta del PVP de forma definitiva. Ya no se trata solo de spamear ataques; la nueva mecánica de "Furia Dracónica" requiere una gestión precisa de la energía.</p>
-                <p>Según los filtradores, la transformación visual es espectacular, ocupando casi el doble de pantalla y añadiendo efectos de partículas increíbles. Pero lo más importante son los combos: ahora la Dragón tiene un "stun" (aturdimiento) que puede encadenarse con el estilo de pelea Godhuman.</p>
-                <p>En Mister Gaming hemos probado el servidor de pruebas y te damos un consejo crucial: empieza a farmear fragmentos ahora mismo. El coste para despertar esta fruta se rumorea que superará los 20,000 fragmentos. Además, se ha añadido una nueva isla oculta en el Tercer Mar donde podrás conseguir el accesorio "Escama Ancestral". ¡A zarpar!</p>
-            </div>
-        </div>
-    </div>
-
-    <div id="roblox2" class="modal">
-        <div class="modal-content">
-            <span class="close-modal" onclick="closeModal('roblox2')">&times;</span>
-             <div class="modal-header"><img src="https://static1.thegamerimages.com/wordpress/wp-content/uploads/2022/05/Roblox-Brookhaven-RP-Key-Art.jpg" alt="Brookhaven City"></div>
-            <div class="modal-text">
-                <h2>Brookhaven RP: La Conspiración de la Agencia</h2>
-                <p>Brookhaven es famoso por ser un juego de rol tranquilo, pero bajo la superficie se esconde una historia oscura. La última actualización silenciosa ha añadido nuevas habitaciones secretas que conectan la historia de "La Agencia" con el misterioso "Mr. Brookhaven".</p>
-                <p>Si vas al hospital abandonado y entras por la ventilación del techo usando una escalera, encontrarás una tarjeta de acceso azul. Si llevas esa tarjeta a la tienda de electricidad y haces clic en la caja de fusibles trasera, se abrirá un panel secreto que lleva a un búnker subterráneo.</p>
-                <p>Este tipo de "Lore" oculto está atrayendo a investigadores. En Mister Gaming hemos verificado que si te sientas en la silla del búnker a las 3:00 AM (hora del juego), aparecerá un mensaje en código morse. ¿Estás listo para dejar de jugar a las casitas y empezar a investigar la verdad?</p>
-            </div>
-        </div>
-    </div>
-
-    <div id="roblox3" class="modal">
-        <div class="modal-content">
-            <span class="close-modal" onclick="closeModal('roblox3')">&times;</span>
-             <div class="modal-header"><img src="https://blog.roblox.com/wp-content/uploads/2022/08/Roblox_UGC_Header_v2.jpg" alt="Roblox Avatar Shop"></div>
-            <div class="modal-text">
-                <h2>Economía en Roblox: Generar Robux Realistas</h2>
-                <p>Seamos honestos: los generadores de Robux son estafas. Sin embargo, existe una economía real dentro de Roblox. Hoy en Mister Gaming te enseñamos la estrategia legítima de "Ropa y UGC" (Contenido Generado por Usuario).</p>
-                <p>La clave es crear "Assets". Con una inversión mínima de 10 Robux, puedes subir diseños de camisetas. La tendencia actual en 2025 es la moda "Y2K" y "Cyberpunk". Si aprendes a usar herramientas gratuitas como GIMP o Canva para crear texturas, puedes vender tus diseños.</p>
-                <p>El truco profesional: No vendas solo ropa, vende "Pases de Juego" para juegos gratuitos que crees (como un "Speed Coil" o una alfombra voladora en un juego de obstáculos simple). ¡Cuida tu cuenta y haz crecer tu cartera!</p>
-            </div>
-        </div>
-    </div>
-
-    <div id="roblox4" class="modal">
-        <div class="modal-content">
-            <span class="close-modal" onclick="closeModal('roblox4')">&times;</span>
-             <div class="modal-header"><img src="https://wallpapers.com/images/hd/robux-doors-scary-game-8v70702314996819.jpg" alt="Roblox Doors Entities"></div>
-            <div class="modal-text">
-                <h2>DOORS Piso 2: Guía de Supervivencia</h2>
-                <p>El juego de terror ha vuelto con su actualización más brutal: "The Mines". Si pensabas que Figure era un problema, espera a conocer a las nuevas entidades del subsuelo. La atmósfera sonora es vital, usa auriculares.</p>
-                <p>Una de las nuevas amenazas es "Giggle", una entidad que se cuelga del techo y te aturde. La mecánica de luz también ha cambiado; ahora necesitas gestionar el combustible de tu lámpara, ya que la oscuridad total te matará mucho más rápido debido a "Grumble".</p>
-                <p>Consejo de Mister Gaming: En la sala de los generadores, no corras. El sonido atrae a las entidades ciegas mucho más rápido debido a la acústica de la cueva. Memoriza el mapa y trabaja en equipo. ¿Podrás llegar a la puerta 200?</p>
-            </div>
-        </div>
-    </div>
-
-    <div id="roblox5" class="modal">
-        <div class="modal-content">
-            <span class="close-modal" onclick="closeModal('roblox5')">&times;</span>
-             <div class="modal-header"><img src="https://miro.medium.com/v2/resize:fit:1400/1*FwK2aA7y5D65754490.png" alt="Roblox Studio Interface"></div>
-            <div class="modal-text">
-                <h2>Roblox Studio e Inteligencia Artificial</h2>
-                <p>Roblox quiere ser el motor de creación más accesible del mundo. La nueva actualización de Studio ha integrado herramientas de IA Generativa que permiten crear sin saber programar en Lua.</p>
-                <p>Ahora puedes escribir en un chat lateral cosas como "Generar un bosque lluvioso con niebla roja" y el motor lo creará automáticamente. También se ha implementado un asistente de código que ayuda a escribir scripts complejos para NPCs.</p>
-                <p>Esto abre una oportunidad de oro. Si tienes una idea para un juego de terror o un "Obby", nunca ha sido tan fácil. En Mister Gaming creemos que el próximo gran éxito podría ser tuyo. ¡Descarga Studio y empieza a construir hoy!</p>
-            </div>
-        </div>
-    </div>
-
-    <script>
-        function openModal(modalId) {
-            const modal = document.getElementById(modalId);
-            if (modal) {
-                modal.style.display = "block";
-                document.body.style.overflow = "hidden"; 
-            }
-        }
-
-        function closeModal(modalId) {
-            const modal = document.getElementById(modalId);
-            if (modal) {
-                modal.style.display = "none";
-                document.body.style.overflow = "auto"; 
-            }
-        }
-
-        window.onclick = function(event) {
-            if (event.target.classList.contains('modal')) {
-                event.target.style.display = "none";
-                document.body.style.overflow = "auto";
-            }
-        }
-    </script>
 
 </body>
 </html>
