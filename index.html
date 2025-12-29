@@ -108,8 +108,32 @@
             box-shadow: 0 0 30px rgba(57, 255, 20, 0.4);
         }
 
-        /* --- GRID DE SERVICIOS --- */
-        .content { padding: 80px 10%; }
+        /* --- SECCIONES DE CONTENIDO GENERAL --- */
+        .content-section {
+            padding: 80px 10%;
+            background-color: var(--primary); /* Asegura el fondo oscuro para contraste */
+        }
+        
+        .section-title {
+            font-family: 'Montserrat', sans-serif;
+            font-size: clamp(2rem, 5vw, 3rem);
+            text-align: center;
+            margin-bottom: 3rem;
+            color: var(--white);
+            position: relative;
+        }
+
+        .section-title::after {
+            content: '';
+            display: block;
+            width: 60px;
+            height: 4px;
+            background: var(--accent);
+            margin: 15px auto 0;
+            border-radius: 2px;
+        }
+
+        /* --- GRID DE SERVICIOS (EXISTENTE) --- */
         .grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
@@ -131,6 +155,66 @@
 
         .card h3 { color: var(--accent); margin-bottom: 1rem; font-family: 'Montserrat'; }
 
+        /* --- NOTICIAS FORTNITE ESPECÍFICAS --- */
+        .news-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2.5rem;
+            margin-top: 3rem;
+        }
+
+        .news-card {
+            background: var(--secondary);
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 8px 25px rgba(0,0,0,0.4);
+            transition: 0.3s ease-in-out;
+            border: 1px solid rgba(255,255,255,0.08);
+        }
+
+        .news-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 15px 40px rgba(0,0,0,0.6);
+            border-color: var(--accent);
+        }
+
+        .news-card img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            display: block;
+        }
+
+        .news-card-content {
+            padding: 25px;
+        }
+
+        .news-card h4 {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 1.4rem;
+            color: var(--white);
+            margin-bottom: 15px;
+            line-height: 1.3;
+        }
+
+        .news-card p {
+            color: var(--gray);
+            font-size: 0.95rem;
+            line-height: 1.7;
+            margin-bottom: 20px;
+        }
+
+        .read-more {
+            color: var(--accent);
+            font-weight: 700;
+            text-transform: uppercase;
+            font-size: 0.85rem;
+        }
+
+        .read-more:hover {
+            text-decoration: underline;
+        }
+
         /* --- FOOTER --- */
         footer {
             padding: 40px;
@@ -138,11 +222,14 @@
             background: #060e1a;
             color: var(--gray);
             font-size: 0.9rem;
+            border-top: 1px solid rgba(255,255,255,0.05);
         }
 
         /* Responsive */
         @media (max-width: 768px) {
             .nav-links { display: none; } /* En móvil el menú se oculta por simplicidad */
+            .content-section { padding: 60px 5%; }
+            .news-grid { grid-template-columns: 1fr; }
         }
     </style>
 </head>
@@ -151,21 +238,22 @@
     <nav>
         <div class="logo">Mister Gaming</div>
         <div class="nav-links">
-            <a href="#">Inicio</a>
-            <a href="#">Fortnite</a>
+            <a href="#inicio">Inicio</a>
+            <a href="#fortnite-news">Fortnite</a>
             <a href="#">Roblox</a>
             <a href="#">Minecraft</a>
             <a href="#">Políticas</a>
         </div>
     </nav>
 
-    <section class="hero">
+    <section class="hero" id="inicio">
         <h1>DOMINA EL JUEGO</h1>
         <p>Aprende las estrategias que usan los profesionales para ganar cada partida.</p>
         <a href="#trucos" class="cta-button">MÁS TRUCOS</a>
     </section>
 
-    <section class="content" id="trucos">
+    <section class="content-section" id="trucos">
+        <h2 class="section-title">Nuestra Actividad</h2>
         <div class="grid">
             <div class="card">
                 <h3>Noticias</h3>
@@ -179,6 +267,58 @@
                 <h3>Estrategias</h3>
                 <p>Guías paso a paso para mejorar tu puntería y construcción.</p>
             </div>
+        </div>
+    </section>
+
+    <section class="content-section" id="fortnite-news">
+        <h2 class="section-title">Noticias de Fortnite</h2>
+        <div class="news-grid">
+            
+            <div class="news-card">
+                <img src="https://via.placeholder.com/600x400/0a192f/39ff14?text=Fortnite+Noticia+1" alt="Imagen de Noticia 1">
+                <div class="news-card-content">
+                    <h4>Nueva Temporada: Los Orígenes de la Batalla</h4>
+                    <p>Epic Games lanza la Temporada X con un mapa renovado, armas míticas y un pase de batalla que te dejará sin aliento.</p>
+                    <a href="#" class="read-more">Leer Más</a>
+                </div>
+            </div>
+
+            <div class="news-card">
+                <img src="https://via.placeholder.com/600x400/0a192f/39ff14?text=Fortnite+Noticia+2" alt="Imagen de Noticia 2">
+                <div class="news-card-content">
+                    <h4>Filtración: Evento Colaborativo con Marvel</h4>
+                    <p>Se rumorea que Wolverine y Spider-Man podrían llegar a la isla en un evento épico por tiempo limitado. ¡Prepara tus V-Bucks!</p>
+                    <a href="#" class="read-more">Leer Más</a>
+                </div>
+            </div>
+
+            <div class="news-card">
+                <img src="https://via.placeholder.com/600x400/0a192f/39ff14?text=Fortnite+Noticia+3" alt="Imagen de Noticia 3">
+                <div class="news-card-content">
+                    <h4>Guía Pro: Construcción Rápida y Defensiva</h4>
+                    <p>Descubre los 5 trucos esenciales para dominar la construcción en Fortnite y ganar ventaja en cada enfrentamiento.</p>
+                    <a href="#" class="read-more">Leer Más</a>
+                </div>
+            </div>
+
+            <div class="news-card">
+                <img src="https://via.placeholder.com/600x400/0a192f/39ff14?text=Fortnite+Noticia+4" alt="Imagen de Noticia 4">
+                <div class="news-card-content">
+                    <h4>Desafíos Semanales: Recompensas Épicas</h4>
+                    <p>Completa todos los desafíos de esta semana para desbloquear skins exclusivas y una buena cantidad de experiencia.</p>
+                    <a href="#" class="read-more">Leer Más</a>
+                </div>
+            </div>
+
+            <div class="news-card">
+                <img src="https://via.placeholder.com/600x400/0a192f/39ff14?text=Fortnite+Noticia+5" alt="Imagen de Noticia 5">
+                <div class="news-card-content">
+                    <h4>Meta Actual: Las Mejores Armas de la Temporada</h4>
+                    <p>Analizamos el daño, la cadencia y la utilidad de las armas más poderosas que dominan el meta actual de Fortnite.</p>
+                    <a href="#" class="read-more">Leer Más</a>
+                </div>
+            </div>
+
         </div>
     </section>
 
